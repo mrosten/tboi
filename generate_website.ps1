@@ -155,7 +155,22 @@ function New-SectionHTML {
     <link rel="stylesheet" href="${depth}styles.css">
 </head>
 <body>
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    <div id="sidebar-overlay"></div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" style="display:none;">
+        <div class="search-backdrop"></div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search the Book of Ideas...">
+            <div id="search-results"></div>
+        </div>
+    </div>
+
     <header>
+        <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
+        <button id="search-toggle" aria-label="Search" style="font-size:1.2rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">🔍</button>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">$PartTitle</p>
@@ -248,6 +263,11 @@ function New-SectionHTML {
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
     </div>
+    <script src="../../../sidebar.js"></script>
+    <script src="../../../search.js"></script>
+    <script src="../../../glossary_tooltip.js"></script>
+    <script src="../../../audio.js"></script>
+    <script src="../../../bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
@@ -340,7 +360,22 @@ $sectionLinks
     <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    <div id="sidebar-overlay"></div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" style="display:none;">
+        <div class="search-backdrop"></div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search the Book of Ideas...">
+            <div id="search-results"></div>
+        </div>
+    </div>
+
     <header>
+        <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
+        <button id="search-toggle" aria-label="Search" style="font-size:1.2rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">🔍</button>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">$PartTitle</p>
@@ -388,6 +423,11 @@ $chapterLinks
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
     </div>
+    <script src="../../sidebar.js"></script>
+    <script src="../../search.js"></script>
+    <script src="../../glossary_tooltip.js"></script>
+    <script src="../../audio.js"></script>
+    <script src="../../bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
@@ -737,6 +777,51 @@ $fullContents
 </html>
 "@
     return $html
+}
+
+function New-SidebarContent {
+    param(
+        [array]$PartDataList
+    )
+    
+    $sidebarSelect = @"
+    <div class="sidebar-header">
+        <h3>Contents</h3>
+        <button id="close-sidebar" aria-label="Close Navigation">×</button>
+    </div>
+    <div class="sidebar-scroll">
+"@
+
+    foreach ($part in $PartDataList) {
+        $sidebarSelect += @"
+        <div class="sidebar-part">
+            <h4 class="sidebar-part-title">$($part.Title)</h4>
+            <ul class="sidebar-chapter-list">
+"@
+        foreach ($ch in $part.Chapters) {
+            $sidebarSelect += @"
+                <li class="sidebar-chapter">
+                    <details>
+                        <summary>$($ch.Title)</summary>
+                        <ul class="sidebar-section-list">
+"@
+            foreach ($sec in $ch.Sections) {
+                $sidebarSelect += "                            <li><a href='parts/$($part.Target)/$($ch.Folder)/$($sec.Filename)' data-path='parts/$($part.Target)/$($ch.Folder)/$($sec.Filename)'>$($sec.Title)</a></li>`n"
+            }
+            $sidebarSelect += @"
+                        </ul>
+                    </details>
+                </li>
+"@
+        }
+        $sidebarSelect += @"
+            </ul>
+        </div>
+"@
+    }
+
+    $sidebarSelect += "</div>"
+    return $sidebarSelect
 }
 
 # Roman numeral conversion
@@ -1124,6 +1209,54 @@ $(
     # Store for main contents
     $allPartsData += @{ Target = $part.Target; Title = $part.Title; Chapters = $chapterList }
 }
+
+# --- SEARCH INDEX GENERATION ---
+Write-Host "Generating Search Index..." -ForegroundColor Cyan
+$searchIndex = @()
+
+foreach ($part in $allPartsData) {
+    foreach ($ch in $part.Chapters) {
+        foreach ($sec in $ch.Sections) {
+            # Construct URL
+            $url = "parts/$($part.Target)/$($ch.Folder)/$($sec.Filename)"
+            
+            # Read content from generated HTML file
+            $secPath = Join-Path "$websitePath\parts\$($part.Target)\$($ch.Folder)" $sec.Filename
+            if (Test-Path $secPath) {
+                $rawHtml = Get-Content $secPath -Raw -Encoding UTF8
+                # Extract content from content-card div and strip HTML tags
+                if ($rawHtml -match '<div class="content-card">([\s\S]*?)</div>\s*<div class="page-nav">') {
+                    $contentHtml = $matches[1]
+                }
+                else {
+                    $contentHtml = $rawHtml
+                }
+                # Strip HTML tags and normalize whitespace
+                $cleanText = $contentHtml -replace '<[^>]+>', ' ' -replace '\s+', ' '
+                # Truncate to reasonable size for search
+                if ($cleanText.Length -gt 2000) {
+                    $cleanText = $cleanText.Substring(0, 2000)
+                }
+                
+                $searchIndex += @{
+                    id      = "$($part.Target)-$($ch.Folder)-$($sec.Num)"
+                    title   = "Section $($sec.Num): $($sec.Title)"
+                    part    = $part.Title
+                    chapter = $ch.Title
+                    url     = $url
+                    content = $cleanText.Trim()
+                }
+            }
+        }
+    }
+}
+
+$searchIndex | ConvertTo-Json -Depth 3 | Set-Content (Join-Path $websitePath "search_index.json") -Encoding UTF8
+
+# Generate Sidebar Content
+Write-Host "Generating Sidebar Content..." -ForegroundColor Cyan
+$sidebarContent = New-SidebarContent -PartDataList $allPartsData
+$sidebarContent | Set-Content (Join-Path $websitePath "sidebar_content.html") -Encoding UTF8
 
 # Generate main contents page
 $mainContentsHtml = New-MainContentsHTML -PartDataList $allPartsData
