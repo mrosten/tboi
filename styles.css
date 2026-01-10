@@ -2423,6 +2423,21 @@ body.dark-mode .toc-part-group {
   }
 }
 
+/* Dark Mode Breadcrumb Fixes */
+body.dark-mode .breadcrumb-item a {
+  color: var(--accent-gold);
+}
+
+body.dark-mode .breadcrumb-item .separator {
+  color: #c0c8e0;
+}
+
+body.dark-mode .breadcrumb-item a:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+/* Dark Mode Form Elements */
 /* Dark Mode Component Overrides - Fixes for low contrast */
 body.dark-mode h1,
 body.dark-mode h2,
