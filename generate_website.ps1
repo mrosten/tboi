@@ -38,6 +38,7 @@ function Generate-SectionHTML {
         [string]$SectionNum,
         [string]$Content,
         [string]$PrevLink,
+        [string]$PrevLabel = "Previous",
         [string]$NextLink,
         [string]$NextLabel,
         [array]$SectionList,
@@ -133,6 +134,9 @@ function Generate-SectionHTML {
     
     $contentHtml = $paragraphs -join "`n            "
     
+    # Wrap tables in responsive container
+    $contentHtml = $contentHtml -replace '(?s)(<table[^>]*class=["'']data-table["''][^>]*>.*?</table>)', '<div class="table-wrapper">$1</div>'
+
     # Calculate relative path depth
     $depth = "../../../"
     
@@ -232,7 +236,7 @@ function Generate-SectionHTML {
         </div>
 
         <div class="page-nav">
-            <a href="$PrevLink" class="nav-btn prev">Previous</a>
+            <a href="$PrevLink" class="nav-btn prev">$PrevLabel</a>
             <a href="$NextLink" class="nav-btn next">$NextLabel</a>
         </div>
     </main>
@@ -593,8 +597,12 @@ $(
             $sectionFilename = $section.Name.Replace('.txt', '.html')
             
             # Determine prev/next links and labels
+            $prevLabel = "Previous"
+            
             if ($i -eq 0) {
                 # First section of the chapter
+                $prevLabel = "Previous Chapter"
+                
                 # Find previous chapter
                 $currentChapterIndex = [array]::IndexOf($chapters, $chapter)
                 
@@ -651,19 +659,23 @@ $(
                             else {
                                 $prevLink = "../../$($prevPart.Target)/index.html"
                             }
+                            $prevLabel = "Previous Part: $($prevPart.Title)"
                         }
                         else {
                             $prevLink = "../../$($prevPart.Target)/index.html"
+                            $prevLabel = "Previous Part: $($prevPart.Title)"
                         }
                     }
                     else {
                         # First Part of Book
                         $prevLink = "../../../contents.html"
+                        $prevLabel = "Table of Contents"
                     }
                 }
             }
             else {
                 $prevLink = $chapterSectionList[$i - 1].Filename
+                $prevLabel = "Previous Section"
             }            
             $nextLink = ""
             $nextLabel = "Next"
@@ -719,7 +731,7 @@ $(
             }
             
             # Generate HTML
-            $html = Generate-SectionHTML -PartName $part.Target -PartTitle $part.Title -ChapterNum $chapterNum -ChapterTitle $chapterTitle -SectionNum $sectionNum -Content $content -PrevLink $prevLink -NextLink $nextLink -NextLabel $nextLabel -SectionList $chapterSectionList -ChapterList $chapterList -PartList $partMappings -Footnotes $footnotes
+            $html = Generate-SectionHTML -PartName $part.Target -PartTitle $part.Title -ChapterNum $chapterNum -ChapterTitle $chapterTitle -SectionNum $sectionNum -Content $content -PrevLink $prevLink -PrevLabel $prevLabel -NextLink $nextLink -NextLabel $nextLabel -SectionList $chapterSectionList -ChapterList $chapterList -PartList $partMappings -Footnotes $footnotes
             
             $outputFile = Join-Path $chapterPath $section.Name.Replace('.txt', '.html')
             $html | Set-Content $outputFile -Encoding UTF8

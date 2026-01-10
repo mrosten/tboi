@@ -352,6 +352,41 @@ ul li::marker {
   color: var(--accent-gold);
 }
 
+.concept-box {
+  background-color: #f9f9f9;
+  border-left: 4px solid #b8860b;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #b8860b, transparent);
+  opacity: 0.2;
+}
+
+.concept-box strong {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #b8860b;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+  padding-bottom: 0.4rem;
+}
+
 /* ===== Table of Contents ===== */
 .toc {
   background: var(--background-parchment);
@@ -643,16 +678,17 @@ details.chapter-folder[open] summary.chapter-header::after {
 /* Fancy Blockquote */
 blockquote.fancy-quote {
   font-family: 'Lora', serif;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--primary-deep-blue);
-  background: linear-gradient(to right, rgba(20, 33, 61, 0.05), transparent);
-  border-left: 4px solid var(--accent-gold);
-  padding: 1.5rem 2rem;
-  margin: 2rem 0;
+  background: linear-gradient(135deg, rgba(20, 33, 61, 0.03), rgba(218, 165, 32, 0.05));
+  border-left: 5px solid var(--accent-gold);
+  padding: 2rem 3rem 2rem 3.5rem;
+  margin: 2.5rem 0;
   position: relative;
-  border-radius: 0 8px 8px 0;
-  transition: transform 0.3s ease;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
 }
 
 blockquote.fancy-quote:hover {
@@ -1029,14 +1065,23 @@ footer p {
 }
 
 /* ===== Tables ===== */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background: white;
+  /* Ensure background behind scroll */
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
+  margin: 0;
+  /* Margin moved to wrapper */
   font-family: 'Lora', serif;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  overflow: hidden;
+  min-width: 600px;
+  /* Force scroll on small screens */
 }
 
 .data-table th {
@@ -1290,15 +1335,25 @@ footer p {
 }
 
 .balance-label {
-  padding: 0.8rem 1.5rem;
-  background: #fdfaf3;
-  border: 1px solid rgba(139, 115, 85, 0.4);
-  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  background: #fff;
+  border: 1px solid rgba(139, 115, 85, 0.2);
+  border-radius: 50px;
   cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
   color: #555;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.balance-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-gold);
 }
 
 #righteous:checked~.balance-controls .label-righteous,
@@ -1401,19 +1456,6 @@ footer p {
   gap: 2rem;
   margin-top: 2rem;
   text-align: left;
-}
-
-.consequence-box {
-  padding: 1.2rem;
-  border-radius: 8px;
-  background: #fdfaf3;
-  border: 1px solid rgba(139, 115, 85, 0.1);
-}
-
-.consequence-box h5 {
-  margin-top: 0;
-  color: #14213d;
-  font-size: 1rem;
 }
 
 .consequence-box p {
@@ -1523,6 +1565,7 @@ footer p {
     opacity: 0;
   }
 }
+
 /* ===== Visual Placeholders ===== */
 .visual-placeholder {
   width: 100%;
@@ -1546,7 +1589,7 @@ footer p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1) 1px, transparent 1px),
     radial-gradient(circle at 70% 70%, rgba(26, 35, 126, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
@@ -1680,13 +1723,28 @@ footer p {
 }
 
 @keyframes flicker {
-  0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
-  100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+  0% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
 }
 
 @keyframes signal-expand {
-  0% { transform: translateX(-50%) scale(0.1); opacity: 0.8; }
-  100% { transform: translateX(-50%) scale(1.5); opacity: 0; border-width: 0px; }
+  0% {
+    transform: translateX(-50%) scale(0.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1.5);
+    opacity: 0;
+    border-width: 0px;
+  }
 }
 
 /* ===== CSS Visual: The Union of Souls ===== */
@@ -1749,16 +1807,35 @@ footer p {
 }
 
 @keyframes rotate-union {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse-blue {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.2); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.2);
+  }
 }
 
 @keyframes pulse-gold {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.2); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.2);
+  }
 }
