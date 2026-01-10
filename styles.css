@@ -2160,6 +2160,31 @@ body.dark-mode {
   --gradient-header: linear-gradient(135deg, #000000 0%, #0a0e24 50%, #000000 100%);
 }
 
+/* Dark mode text fixes */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span {
+  color: var(--text-dark);
+}
+
+body.dark-mode strong,
+body.dark-mode b {
+  color: var(--accent-gold) !important;
+}
+
+body.dark-mode em,
+body.dark-mode i {
+  color: #c0c8e0;
+}
+
+body.dark-mode .content-card a {
+  color: var(--accent-gold);
+}
+
+body.dark-mode .content-card a:hover {
+  color: #ffd700;
+}
+
 /* Fix for concept box in dark mode to start dark */
 body.dark-mode .concept-box {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
