@@ -21,9 +21,37 @@
 </head>
 
 <body>
+    <!-- Sidebar Container -->
+    <div id="sidebar-container">
+        <div class="sidebar-header">
+            <h3>Contents</h3>
+            <button id="close-sidebar" aria-label="Close Navigation">×</button>
+        </div>
+        <div class="sidebar-scroll">
+            <div class="sidebar-part">
+                <h4 class="sidebar-part-title">Part I — Philosophy and Faith</h4>
+                <ul class="sidebar-chapter-list">
+                    <li class="sidebar-chapter">
+                        <details>
+                            <summary>Chapter 1: God The Song Of God</summary>
+                            <ul class="sidebar-section-list">
+                                <li><a href='parts/part_i/chapter_01/section_i.html'>God — The Song of God</a></li>
+                                <li><a href='parts/part_i/chapter_01/section_ii.html'>Spinoza's Proof of God</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <p style="padding:1rem; font-size:0.9rem; color:#666;">For full navigation, visit <a href="contents.html"
+                    style="color:var(--accent-gold);">Table of Contents</a></p>
+        </div>
+    </div>
+    <div id="sidebar-overlay"></div>
+
     <header>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode"
-            style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">🌙</button>
+        <button id="sidebar-toggle" aria-label="Open Navigation">☰</button>
+        <a href="search.html" id="search-link" aria-label="Search">🔍</a>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">A Unified System of Science, Philosophy, and Kabbalah</p>
     </header>
@@ -107,6 +135,9 @@
     <footer>
         <p>The Torah Book of Ideas — A journey through wisdom, faith, and understanding</p>
     </footer>
+    <script src="sidebar.js"></script>
+    <script src="audio.js"></script>
+    <script src="bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
