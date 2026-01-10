@@ -13,32 +13,23 @@ If it wasn't from Abraham, then clearly it must have been from some spiritual gi
 
 One's place in the world is largely determined by the place one has in the large events of each of the ten sephirot. For, like in Math there is a constant progression upward and it is the job of the mathematician to add more bricks to the building of knowledge, not just to understand it, thus it is with all the ten sephirot. Thus:
 
-<strong>Torah [Beauty]</strong>
-Music [Judgment]
-Mathematics
-Philosophy
-Politics
-
-<strong>Advanced Math [Democracy]</strong>
-Kabbalah
-Romantic Calculus
-Rational
-The State
-
-<strong>Gemarah</strong>
-Classical Trigonometry
-Aristotle
-Feudalism
-
-<strong>Mishna</strong>
-Renaissance
-Algebra
-Plato
-Empire
-
-<strong>Bible</strong>
-Medieval Geometry
-Socrates
-Monarchy
+<table class="data-table">
+<thead>
+<tr>
+<th>Torah [Beauty]</th>
+<th>Music [Judgment]</th>
+<th>Mathematics</th>
+<th>Philosophy</th>
+<th>Politics</th>
+</tr>
+</thead>
+<tbody>
+<tr><td></td><td></td><td>Advanced Math</td><td></td><td>Democracy</td></tr>
+<tr><td>Kabbalah</td><td>Romantic</td><td>Calculus</td><td>Rational</td><td>The State</td></tr>
+<tr><td>Gemarah</td><td>Classical</td><td>Trigonometry</td><td>Aristotle</td><td>Feudalism</td></tr>
+<tr><td>Mishna</td><td>Renaissance</td><td>Algebra</td><td>Plato</td><td>Empire</td></tr>
+<tr><td>Bible</td><td>Medieval</td><td>Geometry</td><td>Socrates</td><td>Monarchy</td></tr>
+</tbody>
+</table>
 
 There are in each group [and there are many more groups] periods of blackholes when no progress is made. Sometimes progress is horizontal and sometimes it is vertical. Horizontal progress is also important since it adds to the base.

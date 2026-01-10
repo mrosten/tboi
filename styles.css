@@ -852,7 +852,9 @@ footer p {
 
 .section-grid a:hover {
   background-color: var(--secondary-slate-blue);
-  color: white;
+  color: var(--primary-royal-blue);
+  /* Changed from white to visible color or ensure background is dark enough */
+  background-color: rgba(20, 33, 61, 0.1);
 }
 
 .section-grid a.active {
@@ -863,4 +865,243 @@ footer p {
 /* Remove Chapter Heading form content-card (redundant) */
 .content-card h2 {
   display: none;
+}
+
+/* ===== Tables ===== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: 'Lora', serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table th {
+  background-color: var(--primary-royal-blue);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+}
+
+.data-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+  color: var(--text-dark);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: rgba(20, 33, 61, 0.02);
+}
+
+/* ===== Interactive Timeline (Chapter 8) ===== */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 4px;
+  background: var(--background-parchment);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 60px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-royal-blue);
+  border: 4px solid white;
+  box-shadow: 0 0 0 3px var(--accent-gold);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+  background: var(--accent-gold);
+  box-shadow: 0 0 0 5px var(--primary-royal-blue);
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(139, 115, 85, 0.2);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgba(139, 115, 85, 0.2);
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  color: var(--primary-deep-blue);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* ===== Strange Loop / Double Helix Animation ===== */
+.strange-loop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  margin: 3rem 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(250, 248, 240, 1) 100%);
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.helix-loader {
+  position: relative;
+  width: 100px;
+  height: 100%;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary-royal-blue);
+  animation: helix 2s ease-in-out infinite;
+}
+
+.dot:nth-child(2n) {
+  background-color: var(--accent-gold);
+  animation-delay: 1s;
+}
+
+/* Generate multiple dots positions */
+.dot:nth-child(1) {
+  top: 20%;
+  left: 0%;
+  animation-delay: 0.0s;
+}
+
+.dot:nth-child(2) {
+  top: 20%;
+  left: 0%;
+  animation-delay: 1.0s;
+}
+
+.dot:nth-child(3) {
+  top: 35%;
+  left: 20%;
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(4) {
+  top: 35%;
+  left: 20%;
+  animation-delay: 1.2s;
+}
+
+.dot:nth-child(5) {
+  top: 50%;
+  left: 40%;
+  animation-delay: 0.4s;
+}
+
+.dot:nth-child(6) {
+  top: 50%;
+  left: 40%;
+  animation-delay: 1.4s;
+}
+
+.dot:nth-child(7) {
+  top: 65%;
+  left: 60%;
+  animation-delay: 0.6s;
+}
+
+.dot:nth-child(8) {
+  top: 65%;
+  left: 60%;
+  animation-delay: 1.6s;
+}
+
+.dot:nth-child(9) {
+  top: 80%;
+  left: 80%;
+  animation-delay: 0.8s;
+}
+
+.dot:nth-child(10) {
+  top: 80%;
+  left: 80%;
+  animation-delay: 1.8s;
+}
+
+@keyframes helix {
+  0% {
+    transform: translateY(0) scale(1);
+    z-index: 10;
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(20px) scale(0.7);
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(0) scale(0.5);
+    z-index: 1;
+    opacity: 0.3;
+  }
+
+  75% {
+    transform: translateY(-20px) scale(0.7);
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    z-index: 10;
+    opacity: 1;
+  }
 }

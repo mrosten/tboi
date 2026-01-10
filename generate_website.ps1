@@ -356,24 +356,30 @@ foreach ($part in $partMappings) {
                 $currentChapterIndex = [array]::IndexOf($chapters, $chapter)
                 if ($currentChapterIndex -lt $chapters.Count - 1) {
                     $nextChapter = $chapters[$currentChapterIndex + 1]
-                    # Assume section_i.html exists for next chapter
-                    $nextLink = "../$($nextChapter.Name.Split('-')[0])/section_i.html" 
-                    # Note: Folder name logic in script loop was manual 'chapter_$chapterNum'
-                    # Better: use the loop variables we already have
-                    # Actually we are inside chapter loop. Let's look at $chapterList
-                     
-                    # Simple logic: We don't have easy access to next chapter's folder name in this scope without re-deriving
-                    # But we know $chapterList is being built.
-                    # Wait, $chapterList is incomplete in current iteration.
-                     
-                    # Simpler: Link to Part Index
-                    $nextLink = "../index.html"
-                    $nextLabel = "Next Chapter (Index)"
+                    $nextChapterNum = if ($nextChapter.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
+                    
+                    # Normalize next chapter name for display
+                    $nextChTitle = ($nextChapter.Name -replace 'chapter_\d+-', '' -replace '-', ' ').Trim()
+                    $nextChTitle = (Get-Culture).TextInfo.ToTitleCase($nextChTitle)
+                    
+                    # Construct link to next chapter's Section I
+                    $nextLink = "../chapter_$nextChapterNum/section_i.html"
+                    $nextLabel = "Next Chapter: $nextChTitle"
                 }
                 else {
-                    # Last chapter in part -> Link to Table of Contents or Next Part
-                    $nextLink = "../../../contents.html"
-                    $nextLabel = "Table of Contents"
+                    # Last chapter in part -> Link to Next Part
+                    $currentPartIndex = [array]::IndexOf($partMappings, $part)
+                    if ($currentPartIndex -lt $partMappings.Count - 1) {
+                        $nextPart = $partMappings[$currentPartIndex + 1]
+                        # Link to the index of the next part (linking to specific chapter is complex due to numbering)
+                        $nextLink = "../../parts/$($nextPart.Target)/index.html"
+                        $nextLabel = "Start $($nextPart.Title)"
+                    }
+                    else {
+                        # End of book
+                        $nextLink = "../../../contents.html"
+                        $nextLabel = "Table of Contents"
+                    }
                 }
             }
             
