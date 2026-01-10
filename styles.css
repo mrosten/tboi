@@ -2336,3 +2336,9 @@ body.dark-mode .justice-balance {
 body.dark-mode .consequence-box strong {
   color: var(--accent-gold) !important;
 }
+
+/* Fix Light Mode Table of Contents Contrast */
+.toc-part-title,
+.toc-part-title span {
+  color: white !important;
+}
