@@ -357,18 +357,9 @@ $sectionLinks
     <div id="sidebar-container">$SidebarContent</div>
     <div id="sidebar-overlay"></div>
 
-    <!-- Search Modal -->
-    <div id="search-modal" style="display:none;">
-        <div class="search-backdrop"></div>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search the Book of Ideas...">
-            <div id="search-results"></div>
-        </div>
-    </div>
-
     <header>
         <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
-        <button id="search-toggle" aria-label="Search" style="font-size:1.2rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">🔍</button>
+        <a href="../../search.html" id="search-link" aria-label="Search" style="font-size:1.2rem; color:inherit; text-decoration:none; margin-right:10px;">🔍</a>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">$PartTitle</p>
