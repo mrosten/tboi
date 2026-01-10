@@ -102,8 +102,20 @@ header>button:first-of-type {
   left: 1rem;
 }
 
-#search-toggle {
+#search-toggle,
+#search-link {
   left: 3.5rem;
+  position: absolute;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: 0.3rem;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+  z-index: 100;
 }
 
 #audio-toggle {
@@ -120,6 +132,7 @@ header>button:first-of-type {
 
 #sidebar-toggle:hover,
 #search-toggle:hover,
+#search-link:hover,
 #audio-toggle:hover,
 #bookmark-toggle:hover,
 #theme-toggle:hover {
