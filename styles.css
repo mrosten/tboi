@@ -140,6 +140,60 @@ header>button:first-of-type {
   opacity: 0.9;
 }
 
+/* Mobile responsive header controls */
+@media (max-width: 768px) {
+  header {
+    padding-top: 3rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  #sidebar-toggle,
+  #search-toggle,
+  #search-link,
+  #audio-toggle,
+  #bookmark-toggle {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+  }
+
+  #sidebar-toggle {
+    left: 0.5rem;
+    top: 0.5rem;
+  }
+
+  #search-toggle,
+  #search-link {
+    left: 2.2rem;
+    top: 0.5rem;
+  }
+
+  #audio-toggle {
+    left: 3.8rem;
+    top: 0.5rem;
+  }
+
+  #bookmark-toggle {
+    left: 5.4rem;
+    top: 0.5rem;
+  }
+
+  #theme-toggle {
+    right: 0.5rem;
+    top: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* Hide star decorations on mobile */
+  header::before,
+  header::after {
+    display: none;
+  }
+}
+
 header::before,
 header::after {
   content: '✡';
