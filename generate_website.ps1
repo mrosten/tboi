@@ -359,14 +359,17 @@ $sectionLinks
         }
         
         $fullContents += @"
-                <div class="toc-part-group" style="margin-bottom: 3rem;">
-                    <div class="toc-part-title">
-                        <a href="parts/$($part.Target)/index.html" style="color: white; text-decoration: none;">$($part.Title)</a>
+                <details class="toc-part-group" open style="margin-bottom: 2rem;">
+                    <summary class="toc-part-title" style="cursor: pointer; list-style: none; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; color: var(--gold-primary); font-family: 'Frank Ruhl Libre', serif; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 0.5rem; display: inline-block; width: 100%;">$($part.Title)</span>
+                    </summary>
+                    <div style="margin-bottom: 1rem; margin-left: 1rem;">
+                        <a href="parts/$($part.Target)/index.html" style="font-size: 0.9rem; font-style: italic; color: var(--text-muted);">View Part Index →</a>
                     </div>
                     <div class="toc-chapters" style="display: block; padding-left: 0;">
 $chapterLinks
                     </div>
-                </div>
+                </details>
 "@
     }
     
@@ -430,9 +433,9 @@ $partMappings = @(
     @{Source = "part_i-Philosophy and Faith"; Target = "part_i"; Title = "Part I — Philosophy and Faith" },
     @{Source = "part_ii-Halachah"; Target = "part_ii"; Title = "Part II — Halachah" },
     @{Source = "part_iii-life"; Target = "part_iii_life"; Title = "Part III — Life" },
-    @{Source = "part_iii-politics"; Target = "part_iii_politics"; Title = "Part III — Politics" },
-    @{Source = "part_iv-ideas"; Target = "part_iv"; Title = "Part IV — Ideas" },
-    @{Source = "part_v-christianity"; Target = "part_v"; Title = "Part V — Christianity" }
+    @{Source = "part_iv-politics"; Target = "part_iv_politics"; Title = "Part IV — Politics" },
+    @{Source = "part_v-ideas"; Target = "part_v_ideas"; Title = "Part V — Ideas" },
+    @{Source = "part_vi-christianity"; Target = "part_vi_christianity"; Title = "Part VI — Christianity" }
 )
 
 $totalSections = 0
@@ -505,26 +508,58 @@ foreach ($part in $partMappings) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../../../styles.css">
 </head>
 <body>
     <header>
         <h1>The Torah Book of Ideas</h1>
-        <p class="subtitle">$PartTitle</p>
+        <p class="subtitle">$($part.Title)</p>
     </header>
     <nav>
         <a href="../../../index.html">Home</a>
         <a href="../../../contents.html">Contents</a>
-        <a href="../index.html" class="active">$PartTitle</a>
+        <a href="../index.html" class="active">$($part.Title)</a>
     </nav>
     <main class="container">
         <div class="breadcrumb">
-            <a href="../../../index.html">Home</a>
+            <div class="breadcrumb-item">
+                <a href="../../../index.html">Home</a>
+            </div>
             <span class="separator">›</span>
-            <a href="../index.html">$PartTitle</a>
+            <div class="breadcrumb-item has-dropdown">
+                <a href="../index.html">$($part.Title)</a>
+                <div class="breadcrumb-dropdown">
+                    $(
+                        $pLinks = ""
+                        foreach ($p in $partMappings) {
+                            $activeClass = if ($p.Target -eq $part.Target) { "class='active'" } else { "" }
+                            $pPath = "../../../parts/$($p.Target)/index.html"
+                            $pLinks += "<a href='$pPath' $activeClass>$($p.Title)</a>"
+                        }
+                        $pLinks
+                    )
+                </div>
+            </div>
             <span class="separator">›</span>
-            <span>$ChapterTitle</span>
+            <div class="breadcrumb-item has-dropdown">
+                <a href="index.html" class="active">$ChapterTitle</a>
+                <div class="breadcrumb-dropdown">
+                    $(
+                        $cLinks = ""
+                        foreach ($c in $chapterList) {
+                            $activeClass = if ($c.Num -eq $chapterNum) { "class='active'" } else { "" }
+                            # Link to chapter index
+                            $cPath = "../$($c.Folder)/index.html"
+                            $cLinks += "<a href='$cPath' $activeClass>$($c.Title)</a>"
+                        }
+                        $cLinks
+                    )
+                </div>
+            </div>
         </div>
+
         <div class="content-card">
             <h2>$ChapterTitle</h2>
             <div class="chapter-toc">
@@ -558,8 +593,78 @@ $(
             $sectionFilename = $section.Name.Replace('.txt', '.html')
             
             # Determine prev/next links and labels
-            $prevLink = if ($i -eq 0) { "../index.html" } else { $chapterSectionList[$i - 1].Filename }
-            
+            if ($i -eq 0) {
+                # First section of the chapter
+                # Find previous chapter
+                $currentChapterIndex = [array]::IndexOf($chapters, $chapter)
+                
+                if ($currentChapterIndex -gt 0) {
+                    # Previous Chapter in same Part
+                    $prevChapter = $chapters[$currentChapterIndex - 1]
+                    # Need to find last section of prevChapter
+                    # Re-use logical sort block logic basically or just finding last file
+                    # Helper sort block
+                    $prevChSections = Get-ChildItem $prevChapter.FullName -Filter "section_*.txt" | Sort-Object { 
+                        if ($_.Name -match 'section_([ivx]+)\.txt') { 
+                            $num = $matches[1]
+                            if ($romanToInt.ContainsKey($num)) { return $romanToInt[$num] }
+                        }
+                        return 999 
+                    }
+                     
+                    if ($prevChSections.Count -gt 0) {
+                        $lastSecFile = $prevChSections[$prevChSections.Count - 1]
+                        $lastSecFilename = $lastSecFile.Name.Replace('.txt', '.html')
+                        $prevChapterNum = if ($prevChapter.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
+                        
+                        $prevLink = "../chapter_$prevChapterNum/$lastSecFilename"
+                    }
+                    else {
+                        $prevLink = "../index.html" # Fallback
+                    }
+                }
+                else {
+                    # First chapter of the Part -> Previous Part
+                    $currentPartIndex = [array]::IndexOf($partMappings, $part)
+                    if ($currentPartIndex -gt 0) {
+                        # Previous Part
+                        $prevPart = $partMappings[$currentPartIndex - 1]
+                        $prevPartPath = Join-Path $splitBookPath $prevPart.Source
+                        $prevPartChapters = Get-ChildItem $prevPartPath -Directory | Sort-Object Name
+                        if ($prevPartChapters.Count -gt 0) {
+                            $lastCh = $prevPartChapters[$prevPartChapters.Count - 1]
+                            $lastChNum = if ($lastCh.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
+                             
+                            $lastChSections = Get-ChildItem $lastCh.FullName -Filter "section_*.txt" | Sort-Object { 
+                                if ($_.Name -match 'section_([ivx]+)\.txt') { 
+                                    $num = $matches[1]
+                                    if ($romanToInt.ContainsKey($num)) { return $romanToInt[$num] }
+                                }
+                                return 999 
+                            }
+                             
+                            if ($lastChSections.Count -gt 0) {
+                                $lastSecFile = $lastChSections[$lastChSections.Count - 1]
+                                $lastSecFilename = $lastSecFile.Name.Replace('.txt', '.html')
+                                $prevLink = "../../$($prevPart.Target)/chapter_$lastChNum/$lastSecFilename"
+                            }
+                            else {
+                                $prevLink = "../../$($prevPart.Target)/index.html"
+                            }
+                        }
+                        else {
+                            $prevLink = "../../$($prevPart.Target)/index.html"
+                        }
+                    }
+                    else {
+                        # First Part of Book
+                        $prevLink = "../../../contents.html"
+                    }
+                }
+            }
+            else {
+                $prevLink = $chapterSectionList[$i - 1].Filename
+            }            
             $nextLink = ""
             $nextLabel = "Next"
             
@@ -589,9 +694,21 @@ $(
                     $currentPartIndex = [array]::IndexOf($partMappings, $part)
                     if ($currentPartIndex -lt $partMappings.Count - 1) {
                         $nextPart = $partMappings[$currentPartIndex + 1]
-                        # Link to the index of the next part (linking to specific chapter is complex due to numbering)
-                        $nextLink = "../../parts/$($nextPart.Target)/index.html"
-                        $nextLabel = "Start $($nextPart.Title)"
+                        
+                        # Find first chapter of next part to link directly to section_i
+                        $nextPartSource = Join-Path $splitBookPath $nextPart.Source
+                        $nextPartChapters = Get-ChildItem $nextPartSource -Directory | Sort-Object Name
+                        if ($nextPartChapters.Count -gt 0) {
+                            $firstCh = $nextPartChapters[0]
+                            $firstChNum = if ($firstCh.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
+                            $nextLink = "../../$($nextPart.Target)/chapter_$firstChNum/section_i.html"
+                            $nextLabel = "Start $($nextPart.Title)"
+                        }
+                        else {
+                            # Fallback to index if no chapters found (unlikely)
+                            $nextLink = "../../$($nextPart.Target)/index.html"
+                            $nextLabel = "Start $($nextPart.Title)"
+                        }                    
                     }
                     else {
                         # End of book

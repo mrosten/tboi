@@ -1,53 +1,40 @@
 [TITLE: The Nature of Success]
 <blockquote class="fancy-quote">
-“Beware of any activity that requires the purchase of new clothes.” — Thoreau
+“Beware of any activity that requires the purchase of new clothes.” — Thoreau.
 </blockquote>
 
-<h4>The Tzelem of Greatness</h4>
-<p>Every person is born with a certain <em>Tzelem</em> (Form)—a unique world-line in time and space that they are destined to grow into. Real success is not about imposing an external order on your life, but about discovering and honoring that internal form. Most people waste years trying to force themselves into a mold that was never meant for them. As Christopher Morley said: "There is only one success—to be able to spend your life in your own way."</p>
-
-<div class="justice-balance">
-    <input type="radio" name="success-path" id="loser-traits" class="balance-toggle" checked>
-    <input type="radio" name="success-path" id="winner-traits" class="balance-toggle">
-    
-    <div class="balance-controls">
-        <label for="loser-traits" class="balance-label label-wicked">The Loser's Loop</label>
-        <label for="winner-traits" class="balance-label label-righteous">The Winner's Way</label>
-    </div>
-
-    <div class="consequence-grid">
-        <div class="consequence-box earth-box" style="grid-column: span 2;">
-            <div id="view-losers">
-                <h5>Fragmented Attention</h5>
-                <ul>
-                    <li>Interrupting deep work for trivial distractions.</li>
-                    <li>Punishing friends while trying to appease enemies.</li>
-                    <li>Ignoring the acquisition of useful, vertical skills.</li>
-                </ul>
-                <span class="status-badge badge-punish">Entropy</span>
-            </div>
-            <div id="view-winners" style="display:none">
-                <h5>Maximum Minimum Gains</h5>
-                <ul>
-                    <li>Accumulating many small, guaranteed "points" daily.</li>
-                    <li>The Noam Elimelech Way: A little bit of everything, every day.</li>
-                    <li>The Michelangelo Obsession: Satisfying the Art, not the clock.</li>
-                </ul>
-                <span class="status-badge badge-reward">Accumulation</span>
-            </div>
-        </div>
+<div class="feature-image">
+    <div class="visual-placeholder">
+        <div class="visual-placeholder-icon">📐</div>
+        <div class="visual-placeholder-text">The Geometry of Destiny</div>
     </div>
 </div>
 
-<script>
-    document.querySelectorAll('input[name="success-path"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            const isLoser = document.getElementById('loser-traits').checked;
-            document.getElementById('view-losers').style.display = isLoser ? 'block' : 'none';
-            document.getElementById('view-winners').style.display = isLoser ? 'none' : 'block';
-        });
-    });
-</script>
+<h4>The Tzelem of Greatness</h4>
+<p>Every person is born with a certain <em>Tzelem</em> (Form)—a unique world-line in time and space that they are destined to fill. Real success is not about imposing an external order on your life, but about discovering and honoring that internal form. Most people waste years trying to force themselves into a mold that was never meant for them. As Christopher Morley said: "There is only one success—to be able to spend your life in your own way."</p>
+
+<div class="concept-box">
+<strong>The Trajectory of Destiny</strong>
+<p>Two opposing loops determine the direction of a life.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+    <div>
+        <h5>The Loser's Loop (Entropy)</h5>
+        <ul>
+            <li>Interrupting deep work for trivial distractions.</li>
+            <li>Punishing friends while trying to appease enemies.</li>
+            <li>Ignoring the acquisition of vertical skills.</li>
+        </ul>
+    </div>
+    <div>
+        <h5>The Winner's Way (Accumulation)</h5>
+        <ul>
+            <li>Accumulating many small, guaranteed "points" daily.</li>
+            <li>The Noam Elimelech Way: A little bit of everything, every day.</li>
+            <li>The Michelangelo Obsession: Satisfying the Art, not the clock.</li>
+        </ul>
+    </div>
+</div>
+</div>
 
 <h4>The Hunger for Perfection</h4>
 <p>Success requires an obsession with truth. When Pope Julius II asked Michelangelo when the Sistine Chapel would be done, he replied: "When I shall have done all that I believe required to satisfy art." This is the same spirit that drove the production of <em>Titanic</em>—not a concern for deadlines or cost, but a sacred goal to honor the facts without compromise. Success is the outer light that surrounds a person when they have polished their inner details to match the higher vision.</p>

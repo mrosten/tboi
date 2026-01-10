@@ -1,49 +1,32 @@
 [TITLE: The Measure of the Saint]
 <blockquote class="fancy-quote">
-“The proof of his being a man of God was his ability to do a miracle.” — The Test of Elijah
+“The proof of his being a man of God was his ability to do a miracle.” — The Test of Elijah.
 </blockquote>
+
+<div class="feature-image">
+    <div class="visual-placeholder">
+        <div class="visual-placeholder-icon">🔥</div>
+        <div class="visual-placeholder-text">The Event Horizon of Holiness</div>
+    </div>
+</div>
 
 <h4>The Necessity of Connection</h4>
 <p>Even with perfect virtue and study, a soul remains disconnected from God unless the Divine Light is specifically shone upon it. To bridge this gap, one must be attached to a human vessel that is already connected to that vertical Light—a <strong>Saint</strong>. This is the root of the commandment to "attach yourself to God"; since God is a "consuming fire," we attach ourselves to Him through those who house His presence.</p>
 
-<div class="feature-image">
-    <img src="../../../images/event_horizon_saints.png" alt="The Event Horizon of Holiness Visual">
-</div>
-
-<div class="justice-balance">
-    <input type="radio" name="saint-type" id="visible-saint" class="balance-toggle" checked>
-    <input type="radio" name="saint-type" id="hidden-saint" class="balance-toggle">
-    
-    <div class="balance-controls">
-        <label for="visible-saint" class="balance-label label-righteous">Visible Saint</label>
-        <label for="hidden-saint" class="balance-label label-wicked">Hidden Saint</label>
+<div class="concept-box">
+<strong>The Two States of Holiness</strong>
+<p>Saints operate in two distinct modes relative to the public.</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+    <div>
+        <h5>The Visible Beacon</h5>
+        <p>Their holiness permeates the area around them. You feel "good" in their presence because their aura is a gift to the world. They are the fixed points of tradition.</p>
     </div>
-
-    <div class="consequence-grid">
-        <div class="consequence-box earth-box" style="grid-column: span 2;">
-            <div id="view-visible">
-                <h5>The Beacon</h5>
-                <p>Their holiness permeates the area around them. You feel "good" in their presence because their aura is a gift to the world. They are the fixed points of tradition.</p>
-                <span class="status-badge badge-reward">Public Light</span>
-            </div>
-            <div id="view-hidden" style="display:none">
-                <h5>The Event Horizon</h5>
-                <p>These are the <em>Lamed Vav</em>. They are accelerating so fast toward God that they become invisible to inertial observers. Their world-line is a hyperbola—the "Event Horizon" of holiness.</p>
-                <span class="status-badge badge-reward">Absolute Velocity</span>
-            </div>
-        </div>
+    <div>
+        <h5>The Hidden Saint (Lamed Vav)</h5>
+        <p>They are accelerating so fast toward God that they become invisible to inertial observers. Their world-line is a hyperbola—the "Event Horizon" of holiness.</p>
     </div>
 </div>
-
-<script>
-    document.querySelectorAll('input[name="saint-type"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            const isVisible = document.getElementById('visible-saint').checked;
-            document.getElementById('view-visible').style.display = isVisible ? 'block' : 'none';
-            document.getElementById('view-hidden').style.display = isVisible ? 'none' : 'block';
-        });
-    });
-</script>
+</div>
 
 <h4>The Three Keys to Ascent</h4>
 <p>How does one reach the level of a Saint? According to the testimony of the masters, there are three primary keys that polish the vessel for the Divine Shine:</p>
