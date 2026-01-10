@@ -360,6 +360,21 @@ ul li::marker {
   pointer-events: none;
 }
 
+/* ===== Book Images ===== */
+.image-container {
+  text-align: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.book-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--accent-gold);
+}
+
 /* ===== Equations (MathJax) ===== */
 .equation {
   background: var(--background-parchment);
@@ -378,7 +393,105 @@ ul li::marker {
   color: var(--primary-deep-blue);
 }
 
-/* ===== Ornamental Divider ===== */
+
+/* ===== Footnotes ===== */
+.footnotes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-medium);
+}
+
+.footnote-item {
+  margin-bottom: 0.8rem;
+}
+
+.footnote-item sup {
+  color: var(--primary-royal-blue);
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+
+/* ===== Enhanced Content Elements ===== */
+
+/* Fancy Blockquote */
+blockquote.fancy-quote {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--primary-deep-blue);
+  background: linear-gradient(to right, rgba(20, 33, 61, 0.05), transparent);
+  border-left: 4px solid var(--accent-gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: 0 8px 8px 0;
+  transition: transform 0.3s ease;
+}
+
+blockquote.fancy-quote:hover {
+  transform: translateX(5px);
+}
+
+blockquote.fancy-quote::before {
+  content: '“';
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--accent-gold);
+  opacity: 0.3;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+
+/* Concept Box (for Ideas/Notes) */
+.concept-box {
+  background-color: #fff;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.concept-box:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--accent-gold);
+}
+
+.concept-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--secondary-slate-blue);
+}
+
+.concept-box strong {
+  color: var(--primary-royal-blue);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+}
+
+/* Emphasis Enhancements */
+em {
+  color: var(--primary-royal-blue);
+  font-weight: 500;
+}
+
+strong {
+  color: var(--primary-deep-blue);
+  font-weight: 700;
+}
+
+/* Ornamental Divider */
 .divider {
   text-align: center;
   margin: 2rem 0;
@@ -617,6 +730,48 @@ footer p {
   animation: fadeIn 0.5s ease-out;
 }
 
+/* ===== Chapter Navigation ===== */
+.chapter-nav {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: var(--background-parchment);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-royal-blue);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.chapter-nav h4 {
+  margin-bottom: 0;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  width: auto;
+}
+
+.chapter-nav a {
+  padding: 0.3rem 0.6rem;
+  background: white;
+  border: 1px solid rgba(139, 115, 85, 0.4);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--primary-deep-blue);
+  transition: all 0.2s;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.chapter-nav a:hover,
+.chapter-nav a.active {
+  background: var(--primary-royal-blue);
+  color: white;
+  border-color: var(--primary-royal-blue);
+}
+
 /* ===== Print Styles ===== */
 @media print {
 
@@ -631,4 +786,81 @@ footer p {
     box-shadow: none;
     border: none;
   }
+}
+
+/* ===== Section Selector (Breadcrumb Dropdown) ===== */
+.section-selector {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-royal-blue);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.section-selector:hover {
+  background-color: rgba(20, 33, 61, 0.05);
+}
+
+.section-selector::after {
+  content: '▾';
+  font-size: 0.8em;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.section-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 8px;
+  z-index: 100;
+  padding: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.section-selector:hover .section-dropdown {
+  display: block;
+}
+
+/* Dropdown Grid */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.section-grid a {
+  display: block;
+  text-align: center;
+  padding: 6px 2px;
+  color: var(--primary-deep-blue);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Lora', serif;
+}
+
+.section-grid a:hover {
+  background-color: var(--secondary-slate-blue);
+  color: white;
+}
+
+.section-grid a.active {
+  background-color: var(--primary-royal-blue);
+  color: white;
+}
+
+/* Remove Chapter Heading form content-card (redundant) */
+.content-card h2 {
+  display: none;
 }
