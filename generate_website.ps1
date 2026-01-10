@@ -469,7 +469,8 @@ $chapterLinks
 # Bibliography page template
 function New-BibliographyPage {
     param(
-        [string]$Content
+        [string]$Content,
+        [string]$SidebarContent = ""
     )
     
     $html = @"
@@ -485,7 +486,13 @@ function New-BibliographyPage {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Sidebar - Content Embedded -->
+    <div id="sidebar-container">$SidebarContent</div>
+    <div id="sidebar-overlay"></div>
+
     <header>
+        <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
+        <a href="search.html" id="search-link" aria-label="Search" style="font-size:1.2rem; color:inherit; text-decoration:none; margin-right:10px;">🔍</a>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">Bibliography</p>
@@ -508,6 +515,11 @@ function New-BibliographyPage {
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
     </div>
+    <script src="sidebar.js"></script>
+    <script src="search.js"></script>
+    <script src="glossary_tooltip.js"></script>
+    <script src="audio.js"></script>
+    <script src="bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
@@ -546,7 +558,8 @@ function New-BibliographyPage {
 # Glossary page template
 function New-GlossaryPage {
     param(
-        [string]$Content
+        [string]$Content,
+        [string]$SidebarContent = ""
     )
     
     $html = @"
@@ -562,7 +575,13 @@ function New-GlossaryPage {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Sidebar - Content Embedded -->
+    <div id="sidebar-container">$SidebarContent</div>
+    <div id="sidebar-overlay"></div>
+
     <header>
+        <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
+        <a href="search.html" id="search-link" aria-label="Search" style="font-size:1.2rem; color:inherit; text-decoration:none; margin-right:10px;">🔍</a>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">Glossary</p>
@@ -585,6 +604,11 @@ function New-GlossaryPage {
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
     </div>
+    <script src="sidebar.js"></script>
+    <script src="search.js"></script>
+    <script src="glossary_tooltip.js"></script>
+    <script src="audio.js"></script>
+    <script src="bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
@@ -622,7 +646,8 @@ function New-GlossaryPage {
 # Full table of contents template
 function New-MainContentsHTML {
     param(
-        [array]$PartDataList
+        [array]$PartDataList,
+        [string]$SidebarContent = ""
     )
     
     $fullContents = ""
@@ -675,7 +700,13 @@ $chapterLinks
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Sidebar - Content Embedded -->
+    <div id="sidebar-container">$SidebarContent</div>
+    <div id="sidebar-overlay"></div>
+
     <header>
+        <button id="sidebar-toggle" aria-label="Open Navigation" style="font-size:1.5rem; background:none; border:none; color:inherit; cursor:pointer; margin-right:10px;">☰</button>
+        <a href="search.html" id="search-link" aria-label="Search" style="font-size:1.2rem; color:inherit; text-decoration:none; margin-right:10px;">🔍</a>
         <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
         <h1>The Torah Book of Ideas</h1>
         <p class="subtitle">Table of Contents</p>
@@ -710,6 +741,11 @@ $fullContents
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image">
     </div>
+    <script src="sidebar.js"></script>
+    <script src="search.js"></script>
+    <script src="glossary_tooltip.js"></script>
+    <script src="audio.js"></script>
+    <script src="bookmarks.js"></script>
     <script>
         // Theme Toggle
         const toggleBtn = document.getElementById('theme-toggle');
@@ -1399,14 +1435,14 @@ $sidebarContent = New-SidebarContent -PartDataList $allPartsData
 $sidebarContent | Set-Content (Join-Path $websitePath "sidebar_content.html") -Encoding UTF8
 
 # Generate main contents page
-$mainContentsHtml = New-MainContentsHTML -PartDataList $allPartsData
+$mainContentsHtml = New-MainContentsHTML -PartDataList $allPartsData -SidebarContent $sidebarContent
 $mainContentsHtml | Set-Content (Join-Path $websitePath "contents.html") -Encoding UTF8
 
 # Generate Bibliography
 $bibContentPath = Join-Path $websitePath "bibliography_content.html"
 if (Test-Path $bibContentPath) {
     $bibRaw = Get-Content $bibContentPath -Raw -Encoding UTF8
-    $bibHtml = New-BibliographyPage -Content $bibRaw
+    $bibHtml = New-BibliographyPage -Content $bibRaw -SidebarContent $sidebarContent
     $bibHtml | Set-Content (Join-Path $websitePath "bibliography.html") -Encoding UTF8
     Write-Host "Generated Bibliography" -ForegroundColor Cyan
 }
@@ -1415,7 +1451,7 @@ if (Test-Path $bibContentPath) {
 $glossContentPath = Join-Path $websitePath "glossary_content.html"
 if (Test-Path $glossContentPath) {
     $glossRaw = Get-Content $glossContentPath -Raw -Encoding UTF8
-    $glossHtml = New-GlossaryPage -Content $glossRaw
+    $glossHtml = New-GlossaryPage -Content $glossRaw -SidebarContent $sidebarContent
     $glossHtml | Set-Content (Join-Path $websitePath "glossary.html") -Encoding UTF8
     Write-Host "Generated Glossary" -ForegroundColor Cyan
 }
