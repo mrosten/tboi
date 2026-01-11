@@ -1451,7 +1451,7 @@ $(
         
         for ($i = 0; $i -lt $sections.Count; $i++) {
             $section = $sections[$i]
-            $sectionNum = if ($section.Name -match 'section_([ivx]+)\.txt') { $romanNumerals[$matches[1]] } else { "I" }
+            $sectionNum = $section.Name.Replace('section_', '').Replace('.txt', '').ToUpper()
             $content = Get-Content $section.FullName -Raw -Encoding UTF8
             
             # Convert cross-references to hyperlinks
@@ -1494,14 +1494,29 @@ $(
                         $prevChTitle = ($prevChapter.Name -replace 'chapter_\d+-', '' -replace '-', ' ').Trim()
                         $prevChTitle = (Get-Culture).TextInfo.ToTitleCase($prevChTitle)
                         
-                        # Get section title if available
-                        $prevSecTitle = Get-SectionTitle -FilePath $lastSecFile.FullName
-                        if ($prevSecTitle) {
-                            $prevSecNum = if ($lastSecFile.Name -match 'section_([ivx]+)\.txt') { $romanNumerals[$matches[1]] } else { "" }
-                            $prevLabel = "$prevChTitle - Section ${prevSecNum}: $prevSecTitle"
+                        if ($Language -eq "he" -and $ChapterTranslations.ContainsKey($prevChTitle)) {
+                            $prevChTitle = $ChapterTranslations[$prevChTitle]
+                        }
+
+                        # Construct link to prev chapter's LAST section
+                        # Find last section of previous chapter
+                        $prevChSecs = Get-ChildItem $prevChapter.FullName -Filter "section_*.txt"
+                        if ($prevChSecs.Count -gt 0) {
+                            $lastSec = $prevChSecs | Sort-Object Name | Select-Object -Last 1
+                            $lastSecNum = $lastSec.Name.Replace("section_", "").Replace(".txt", "").ToUpper()
+                            $prevLink = "../chapter_$prevChapterNum/section_$lastSecNum.html"
+                            
+                            $prevSecTitle = Get-SectionTitle -FilePath $lastSec.FullName
+                            if ($prevSecTitle) {
+                                $prevLabel = "$prevArrow$prevChTitle - $($Loc['Section']) ${lastSecNum}: $prevSecTitle"
+                            }
+                            else {
+                                $prevLabel = "$prevArrow$($Loc['PreviousChapter']): $prevChTitle"
+                            }
                         }
                         else {
-                            $prevLabel = "$prevArrow$($Loc['Previous']) $($Loc['Chapter']): $prevChTitle"
+                            $prevLabel = "$prevArrow$($Loc['PreviousChapter']): $prevChTitle"
+                            $prevLink = "../chapter_$prevChapterNum/section_i.html"
                         }
                     }
                     else {
@@ -1545,12 +1560,12 @@ $(
                             }
                             else {
                                 $prevLink = "../../$($prevPart.Target)/index.html"
+                                $prevLabel = "$prevArrow$($Loc['Previous']) $($Loc['Part']): $($prevPart.Title)"
                             }
-                            $prevLabel = "Previous Part: $($prevPart.Title)"
                         }
                         else {
                             $prevLink = "../../$($prevPart.Target)/index.html"
-                            $prevLabel = "Previous Part: $($prevPart.Title)"
+                            $prevLabel = "$prevArrow$($Loc['Previous']) $($Loc['Part']): $($prevPart.Title)"
                         }
                     }
                     else {

@@ -717,6 +717,14 @@ details.chapter-folder[open] summary.chapter-header::after {
   border-radius: 2px;
 }
 
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
 .nav-btn {
   display: flex;
   align-items: center;
@@ -1070,6 +1078,10 @@ footer p {
   .page-nav {
     flex-direction: column;
     gap: 0.8rem;
+  }
+
+  html[dir="rtl"] .page-nav {
+    flex-direction: column-reverse;
   }
 
   .nav-btn {
@@ -1724,6 +1736,13 @@ footer p {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--accent-gold);
   transition: all 0.3s;
+  height: auto;
+  /* Allow growth */
+  white-space: normal;
+  /* Force wrap */
+  word-wrap: break-word;
+  /* Ensure long words break */
+  line-height: 1.4;
 }
 
 .toc-part-title::-webkit-details-marker {
@@ -3393,14 +3412,18 @@ html[dir="rtl"] .page-nav {
 }
 
 /* Flip arrows for buttons */
+html[dir="rtl"] .page-nav {
+  flex-direction: row-reverse;
+}
+
 html[dir="rtl"] .nav-btn.prev::before {
-  content: "→";
+  content: "←";
   margin-right: 0;
   margin-left: 8px;
 }
 
 html[dir="rtl"] .nav-btn.next::after {
-  content: "←";
+  content: "→";
   margin-left: 0;
   margin-right: 8px;
 }
@@ -3408,6 +3431,7 @@ html[dir="rtl"] .nav-btn.next::after {
 html[dir="rtl"] .nav-btn {
   flex-direction: row-reverse;
 }
+
 
 /* Adjust mobile header controls for RTL */
 @media (max-width: 768px) {
@@ -3456,6 +3480,13 @@ html[dir="rtl"] .nav-btn {
   gap: 4px;
   -webkit-appearance: none;
   appearance: none;
+}
+
+@media (max-width: 768px) {
+  #lang-toggle {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* Dark Mode Language Toggle Specific */
