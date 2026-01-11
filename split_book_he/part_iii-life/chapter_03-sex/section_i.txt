@@ -1,0 +1,65 @@
+[TITLE: קדושת האיחוד]
+<blockquote class="fancy-quote">
+"שמחת החיים תלויה בספונטניות מסוימת ביחס למין. היכן שהמין מדוכא, נותרת רק העבודה." — ברטרנד ראסל.
+</blockquote>
+
+<div class="feature-image">
+    <!-- Pure CSS Visual: The Union of Souls -->
+    <div class="css-visual-union">
+        <div class="union-container">
+            <div class="soul soul-blue"></div>
+            <div class="soul soul-gold"></div>
+        </div>
+        <div class="union-core"></div>
+    </div>
+</div>
+
+<h4>התגובה הרוחנית</h4>
+<p>מין הוא הביטוי הפיזי של התמזגות מטאפיזית. הוא לעולם אינו "ניטרלי". כאשר שתי נשמות מתחברות ללא כלי המחויבות, האנרגיה שנוצרת אינה נעלמת — היא ניתזת. היא מגיבה נגד היחיד ככוח קנאי, וגובה מחיר בדלדול רוחני ובדיסוננס פנימי. אך כאשר הכלי שלם, המעשה הופך למנגנון של איחוד עליון, המושך את ה<em>אור המקיף</em> אל תוך גופם של האוהבים ממש.</p>
+
+<div class="justice-balance">
+    <input type="radio" name="sex-mode" id="sanctified" class="balance-toggle" checked>
+    <input type="radio" name="sex-mode" id="sensual" class="balance-toggle">
+    
+    <div class="balance-controls">
+        <label for="sanctified" class="balance-label label-righteous">מקדש (עלייה)</label>
+        <label for="sensual" class="balance-label label-wicked">חושני (כבידה)</label>
+    </div>
+
+    <div class="consequence-grid">
+        <div class="consequence-box earth-box" style="grid-column: span 2;">
+            <div id="view-sanctified">
+                <h5>עליית הניצוץ</h5>
+                <p>כשהכוונה היא חיבור, המעשה מתפקד כ<em>קורבן</em> במקדש. הוא קושר את העונג הפיזי לשורש עליון, והופך את "הנפש הבהמית" לרכב לקדושה. פעולה זו מושכת ברכה, שלום וחיים חדשים לעולם.</p>
+                <span class="status-badge badge-reward">אינטגרציה</span>
+            </div>
+            <div id="view-sensual" style="display:none">
+                <h5>כבידת הנפילה</h5>
+                <p>עונג המבוקש לשם עצמו נותר כלוא ב"כלים השבורים". הוא מחקה את האור אך חסר את חום החיים. לאורך זמן, הוא יוצר התמכרות לתחושה תוך הרעבת הנשמה, ומוביל לבדידות עמוקה ובלתי מוסברת.</p>
+                <span class="status-badge badge-punish">פרגמנטציה</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('input[name="sex-mode"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            const isSanctified = document.getElementById('sanctified').checked;
+            document.getElementById('view-sanctified').style.display = isSanctified ? 'block' : 'none';
+            document.getElementById('view-sensual').style.display = isSanctified ? 'none' : 'block';
+        });
+    });
+</script>
+
+<h4>ניצוצות בתוך העונג</h4>
+<p>יש סוד בעונג עצמו. מקורו ב<em>עץ הדעת</em>, שהוא תערובת של טוב ורע. העונג אינו האויב; הוא הדלק. בדיוק כפי שטיל זקוק לדלק דליק כדי להימלט מכוח המשיכה, הנשמה זקוקה ל"חום" של התשוקה הפיזית כדי להניע את תפילותיה וכוונותיה לעולמות העליונים.</p>
+
+<div class="concept-box">
+<strong>יוסף: יסוד הנשמות</strong>
+באנטומיה הקבלית, הדחף המיני מושרש ב<em>יסוד</em>, הספירה של יוסף. יוסף היה מגנט. הוא לא רדף; הוא משך. בעידן של כאוס רוחני, קידוש דחף זה הופך את היחיד ל"יוסף" — מגנט חי לנשמות גבוהות, בהירות ושפע.
+</div>
+
+<blockquote class="fancy-quote">
+"כי האלים איטיים, אך בטוחים הם, בבואם לפקוד, כאשר בני אדם בזים לאלוהות ופונים לשיגעון." — סופוקלס.
+</blockquote>
