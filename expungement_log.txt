@@ -1,0 +1,54 @@
+EXPUNGEMENT LOG - CONTENT REVISION
+====================================
+Date: 2026-01-11
+Objective: Remove references to "Baal HaTanya", "Rabbi Shneur Zalman of Liadi", "Chabad", "Tanya", and related terms, using STRICTLY NEUTRAL terminology (no honorifics like "Master").
+
+SUMMARY OF CHANGES
+==================
+
+ENGLISH SOURCE FILES
+-------------------
+1. 1-section_i-philosophy-and-faith.txt:
+   - Replaced "theme of Rabbi Shneur Zalman" with "theme in Hasidic thought".
+   - Replaced "Baal HaTanya's point of view" with "Hasidic point of view".
+   - Replaced "Rabbi Shneur Zalman explained" with "It is explained in Kabbalah".
+   - Replaced "Baal Hatanya" with "this system", "this school of thought", "later thinkers".
+   - Adjusted "some masters" to "some thinkers" for neutrality.
+
+2. 2-section_ii.txt:
+   - Replaced "Baal HaTanya" with "a certain scholar".
+   - Replaced "Chasidic Master" with "a certain scholar" / "the scholar".
+   - Replaced "Shulchan Aruch HaRav" with "The later Code".
+
+3. 5-section_iv-ideas.txt:
+   - Replaced "root of the Baal Hatanya's idea" with "root of the idea".
+   - Replaced "books of the Baal HaTanya" with "books of this school".
+   - Replaced "The Baal HaTanya says" with "Some thinkers say".
+   - Replaced "Master" with "thinker" or "scholar".
+
+4. 6-section_v-christianity.txt:
+   - Replaced "Rabbi Shneur Zalman (The Baal HaTanya)" with "some Kabbalists".
+   - Replaced "Baal Hatanya" with "later thinkers" or "Hasidic thought".
+   - Replaced "later masters" with "later thinkers".
+
+5. 7-glossary.txt:
+   - Removed entry for "Baal HaTanya / Rabbi Shneur Zalman of Liadi".
+   - Modified "Shemita opinion" entry to remove "Baal Hatanya", replacing "masters" with "thinkers".
+
+6. 8-bibliography.txt:
+   - Removed entry for "Shneur Zalman ben Baruch".
+
+7. x-footnotes.txt:
+   - Replaced "son of the Baal Ha Tanya" with "his son" (referring to the author).
+   - Replaced "talks of Joseph Isaac" with "talks of a certain scholar".
+   - Removed honorifics ("Master", "great master").
+
+HEBREW TRANSLATED FILES
+----------------------
+1. split_book_he\part_i-Philosophy and Faith\chapter_08-the-redemption\section_ii.txt:
+   - Replaced "Baal HaTanya (Rabbi Shneur Zalman...)" with "A later Hasidic school" (אסכולה חסידית מאוחרת).
+   - Replaced "Baal HaTanya" with "this system".
+   - Verified no usage of "Master" (אדון/רב) for this context.
+
+2. split_book_he\part_i-Philosophy and Faith\chapter_09-on-learning-torah\section_ii.txt:
+   - Replaced "Tanya" (תניא) with "Hasidic Thought" (חסידות).

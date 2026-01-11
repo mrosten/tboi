@@ -109,6 +109,8 @@ $ChapterTranslations = @{
     'Gemarah'                = 'גמרא'
     'On Science'             = 'על המדע'
     'Decisions'              = 'החלטות'
+    "Principles of Halacha"  = "עקרונות ההלכה"
+    "Prayer"                 = "תפילה"
 }
 
 # Ensure output directory exists
