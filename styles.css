@@ -1528,6 +1528,9 @@ footer p {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  position: relative;
+  /* Ensure controls are above visual */
+  z-index: 10;
 }
 
 .balance-toggle {
@@ -1571,8 +1574,10 @@ footer p {
 .balance-visual {
   position: relative;
   height: 200px;
-  margin: 2rem auto;
+  margin: 4rem auto 2rem;
+  /* Increased top margin to prevent overlap */
   max-width: 400px;
+  z-index: 1;
 }
 
 .scale-stand {
@@ -3239,7 +3244,7 @@ body.dark-mode .toc-chapter-link:hover {
   flex: 1 1 auto;
   justify-content: center;
 }
-}
+
 
 /* ===== RTL Support ===== */
 html[dir="rtl"] {
@@ -3252,6 +3257,21 @@ html[dir="rtl"] body {
   font-family: var(--font-hebrew);
   font-size: 1.15rem;
   /* Increased base font size for Hebrew */
+}
+
+/* Ensure proper right alignment for all text blocks in RTL */
+html[dir="rtl"] p,
+html[dir="rtl"] li,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] .content-card,
+html[dir="rtl"] .balance-visual,
+html[dir="rtl"] .justice-balance {
+  text-align: right;
 }
 
 html[dir="rtl"] .sidebar {
@@ -3362,9 +3382,7 @@ html[dir="rtl"] .toc-chapter-link::before {
   margin-left: 0.8rem;
 }
 
-html[dir="rtl"] summary.chapter-header::after {
-  /* Folder icon */
-}
+
 
 html[dir="rtl"] .section-list {
   padding: 0.5rem 3rem 1rem 1.5rem;
@@ -3422,9 +3440,8 @@ html[dir="rtl"] .nav-btn {
   top: 1rem;
   right: 4rem;
   /* Moved slightly left to avoid crowd */
-  background: none;
+  background: transparent;
   /* Next to theme toggle (right: 1rem) */
-  background: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   cursor: pointer;
@@ -3437,6 +3454,14 @@ html[dir="rtl"] .nav-btn {
   display: flex;
   align-items: center;
   gap: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Dark Mode Language Toggle Specific */
+body.dark-mode #lang-toggle {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
 }
 
 #lang-toggle:hover {
