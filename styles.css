@@ -696,6 +696,8 @@ details.chapter-folder[open] summary.chapter-header::after {
   align-items: center;
   justify-content: center;
   min-width: 180px;
+  max-width: 90%;
+  /* Prevent buttons from being too wide */
   padding: 0.8rem 1.5rem;
   background: white;
   color: var(--primary-deep-blue);
@@ -706,6 +708,12 @@ details.chapter-folder[open] summary.chapter-header::after {
   font-size: 0.95rem;
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  /* Prevent text wrapping */
+  overflow: hidden;
+  /* Hide overflow */
+  text-overflow: ellipsis;
+  /* Show ellipsis for long text */
 }
 
 .nav-btn:hover {
