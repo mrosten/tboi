@@ -18,10 +18,12 @@ We are currently in the middle of translating **Part III: Life**.
         - Section III: Translated
         - Section IV: Translated
         - Section V: Translated
-    - **Chapter 5 (Friendship):** 🚧 In Progress
+    - **Chapter 5 (Friendship):** ✅ Complete
         - Section I: Translated
-        - Sections II+: Pending
-    - **Chapters 6-7:** Pending
+    - **Chapter 6 (Success):** ✅ Complete
+        - Section I: Translated
+        - Section II: Translated
+    - **Chapter 7 (Saints):** Pending
 
 ## Technical Updates
 - **Mobile Layout Fix:** Applied a workaround in `styles.css` to force Right-to-Left (RTL) text alignment on mobile devices for Hebrew content. This overrides a persistent browser/CSS specificity issue where paragraphs were rendering LTR on small screens.
