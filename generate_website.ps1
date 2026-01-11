@@ -28,6 +28,19 @@ if ($currentFootnoteNum) {
     $footnotes[$currentFootnoteNum] = $currentFootnoteText.Trim()
 }
 
+# Helper function to extract title from section file
+function Get-SectionTitle {
+    param([string]$FilePath)
+    
+    if (Test-Path $FilePath) {
+        $content = Get-Content $FilePath -Raw -Encoding UTF8
+        if ($content -match '\[TITLE:\s*(.*?)\]') {
+            return $matches[1].Trim()
+        }
+    }
+    return ""
+}
+
 # HTML template function
 function New-SectionHTML {
     param(
@@ -1158,6 +1171,20 @@ $(
                         $prevChapterNum = if ($prevChapter.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
                         
                         $prevLink = "../chapter_$prevChapterNum/$lastSecFilename"
+                        
+                        # Extract title from previous chapter
+                        $prevChTitle = ($prevChapter.Name -replace 'chapter_\d+-', '' -replace '-', ' ').Trim()
+                        $prevChTitle = (Get-Culture).TextInfo.ToTitleCase($prevChTitle)
+                        
+                        # Get section title if available
+                        $prevSecTitle = Get-SectionTitle -FilePath $lastSecFile.FullName
+                        if ($prevSecTitle) {
+                            $prevSecNum = if ($lastSecFile.Name -match 'section_([ivx]+)\.txt') { $romanNumerals[$matches[1]] } else { "" }
+                            $prevLabel = "← $prevChTitle - Section ${prevSecNum}: $prevSecTitle"
+                        }
+                        else {
+                            $prevLabel = "← Previous Chapter: $prevChTitle"
+                        }
                     }
                     else {
                         $prevLink = "../index.html" # Fallback
@@ -1187,6 +1214,16 @@ $(
                                 $lastSecFile = $lastChSections[$lastChSections.Count - 1]
                                 $lastSecFilename = $lastSecFile.Name.Replace('.txt', '.html')
                                 $prevLink = "../../$($prevPart.Target)/chapter_$lastChNum/$lastSecFilename"
+                                
+                                # Get section title if available
+                                $prevSecTitle = Get-SectionTitle -FilePath $lastSecFile.FullName
+                                if ($prevSecTitle) {
+                                    $prevSecNum = if ($lastSecFile.Name -match 'section_([ivx]+)\.txt') { $romanNumerals[$matches[1]] } else { "" }
+                                    $prevLabel = "← $($prevPart.Title) - Section ${prevSecNum}: $prevSecTitle"
+                                }
+                                else {
+                                    $prevLabel = "← Previous Part: $($prevPart.Title)"
+                                }
                             }
                             else {
                                 $prevLink = "../../$($prevPart.Target)/index.html"
@@ -1206,16 +1243,29 @@ $(
                 }
             }
             else {
-                $prevLink = $chapterSectionList[$i - 1].Filename
-                $prevLabel = "Previous Section"
+                # Previous section in same chapter
+                $prevSec = $chapterSectionList[$i - 1]
+                $prevLink = $prevSec.Filename
+                if ($prevSec.Title) {
+                    $prevLabel = "← Section $($prevSec.Num): $($prevSec.Title)"
+                }
+                else {
+                    $prevLabel = "← Section $($prevSec.Num)"
+                }
             }            
             $nextLink = ""
             $nextLabel = "Next"
             
             if ($i -lt $sections.Count - 1) {
                 # Next section in same chapter
-                $nextLink = $chapterSectionList[$i + 1].Filename
-                $nextLabel = "Next Section"
+                $nextSec = $chapterSectionList[$i + 1]
+                $nextLink = $nextSec.Filename
+                if ($nextSec.Title) {
+                    $nextLabel = "Section $($nextSec.Num): $($nextSec.Title) →"
+                }
+                else {
+                    $nextLabel = "Section $($nextSec.Num) →"
+                }
             }
             else {
                 # Last section in chapter
@@ -1231,7 +1281,16 @@ $(
                     
                     # Construct link to next chapter's Section I
                     $nextLink = "../chapter_$nextChapterNum/section_i.html"
-                    $nextLabel = "Next Chapter: $nextChTitle"
+                    
+                    # Try to get Section I title
+                    $nextSecFile = Join-Path $nextChapter.FullName "section_i.txt"
+                    $nextSecTitle = Get-SectionTitle -FilePath $nextSecFile
+                    if ($nextSecTitle) {
+                        $nextLabel = "$nextChTitle - Section I: $nextSecTitle →"
+                    }
+                    else {
+                        $nextLabel = "Next Chapter: $nextChTitle →"
+                    }
                 }
                 else {
                     # Last chapter in part -> Link to Next Part
@@ -1246,7 +1305,16 @@ $(
                             $firstCh = $nextPartChapters[0]
                             $firstChNum = if ($firstCh.Name -match 'chapter_(\d+)') { $matches[1] } else { "00" }
                             $nextLink = "../../$($nextPart.Target)/chapter_$firstChNum/section_i.html"
-                            $nextLabel = "Start $($nextPart.Title)"
+                            
+                            # Try to get Section I title
+                            $nextSecFile = Join-Path $firstCh.FullName "section_i.txt"
+                            $nextSecTitle = Get-SectionTitle -FilePath $nextSecFile
+                            if ($nextSecTitle) {
+                                $nextLabel = "$($nextPart.Title) - Section I: $nextSecTitle →"
+                            }
+                            else {
+                                $nextLabel = "Start $($nextPart.Title) →"
+                            }
                         }
                         else {
                             # Fallback to index if no chapters found (unlikely)
