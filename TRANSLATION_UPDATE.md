@@ -12,12 +12,12 @@ We are currently in the middle of translating **Part III: Life**.
     - **Chapter 1 (Family):** ✅ Complete
     - **Chapter 2 (Marriage):** ✅ Complete
     - **Chapter 3 (Sex):** ✅ Complete
-    - **Chapter 4 (Ways of Life):** 🚧 In Progress
+    - **Chapter 4 (Ways of Life):** ✅ Complete
         - Section I: Translated
         - Section II: Translated
         - Section III: Translated
-        - Section IV: Pending
-        - Section V: Pending
+        - Section IV: Translated
+        - Section V: Translated
     - **Chapters 5-7:** Pending
 
 ## Technical Updates
