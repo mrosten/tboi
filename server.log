@@ -1,0 +1,8 @@
+nohup: ignoring input
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+127.0.0.1 - - [11/Jan/2026 17:13:33] "GET /language_toggle.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jan/2026 17:13:33] "GET /glossary_terms.json HTTP/1.1" 304 -
+127.0.0.1 - - [11/Jan/2026 17:13:33] "GET /deploy_symbol.json HTTP/1.1" 304 -
+127.0.0.1 - - [11/Jan/2026 17:13:33] "GET /deploy_symbol.json HTTP/1.1" 304 -
+127.0.0.1 - - [11/Jan/2026 17:13:35] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [11/Jan/2026 17:18:03] "GET /he/parts/part_iii_life/chapter_04/section_iv.html HTTP/1.1" 200 -

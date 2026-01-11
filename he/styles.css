@@ -28,6 +28,19 @@
   --font-hebrew: 'Frank Ruhl Libre', serif;
 }
 
+/* Strong RTL enforcement: ensure Hebrew pages and marked elements render RTL/right-aligned.
+   Use high specificity and !important to override mobile or component rules that force LTR.
+   This patch is intentionally small and targeted to fix paragraph alignment on Hebrew pages. */
+html[dir="rtl"] p,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] li,
+.hebrew,
+p.hebrew,
+.hebrew p {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -815,9 +828,8 @@ details.chapter-folder[open] summary.chapter-header::after {
   color: var(--primary-deep-blue);
 }
 
-/* Ensure Hebrew paragraphs always render RTL and right-aligned on small screens
-   and when the element/class indicates Hebrew text. Use high specificity to
-   override competing mobile rules. */
+/* Ensure Hebrew-marked elements render RTL and right-aligned when appropriate.
+   This helps when Hebrew text appears inside LTR pages (mobile or embedded). */
 .hebrew,
 p.hebrew,
 .hebrew p,
@@ -3503,20 +3515,13 @@ html[dir="rtl"] .nav-btn {
   }
 
   /* Force RTL text direction for Hebrew paragraphs on mobile */
+  /* Force RTL text direction for Hebrew paragraphs on mobile */
   html[dir="rtl"] p,
   html[dir="rtl"] blockquote,
-  html[dir="rtl"] li {
-    text-align: right;
-    direction: rtl;
-  }
-
-  /* Also enforce for elements marked with the `hebrew` class even when
-     the page `dir` isn't set (covers embedded Hebrew content). */
-  .hebrew,
-  p.hebrew,
-  .hebrew p {
-    direction: rtl !important;
+  html[dir="rtl"] li,
+  html[dir="rtl"] .content-card p {
     text-align: right !important;
+    direction: rtl;
   }
 
   /* Fix activity button alignment for RTL */
@@ -3794,3 +3799,15 @@ html[dir="rtl"] .sephirot-item {
   color: var(--primary-royal-blue);
   border-radius: 4px;
   transition: background 0.2s;
+/* ===== MOBILE RTL FIX (Workaround) ===== */
+@media (max-width: 768px) {
+  html[dir="rtl"] body,
+  html[dir="rtl"] .container,
+  html[dir="rtl"] .content-card,
+  html[dir="rtl"] p,
+  html[dir="rtl"] li,
+  html[dir="rtl"] div {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+}
