@@ -28,6 +28,19 @@
   --font-hebrew: 'Frank Ruhl Libre', serif;
 }
 
+/* Strong RTL enforcement: ensure Hebrew pages and marked elements render RTL/right-aligned.
+   Use high specificity and !important to override mobile or component rules that force LTR.
+   This patch is intentionally small and targeted to fix paragraph alignment on Hebrew pages. */
+html[dir="rtl"] p,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] li,
+.hebrew,
+p.hebrew,
+.hebrew p {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
 * {
   margin: 0;
   padding: 0;
