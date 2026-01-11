@@ -986,6 +986,10 @@ footer p {
     font-size: 0.85rem;
     overflow-x: auto;
     white-space: nowrap;
+    display: flex !important;
+    /* Ensure it's always visible */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on mobile */
   }
 
   .toc {
