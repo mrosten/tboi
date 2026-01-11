@@ -2461,8 +2461,14 @@ body.dark-mode .breadcrumb-item a:hover {
 /* Dark Mode Component Overrides - Fixes for low contrast */
 body.dark-mode h1,
 body.dark-mode h2,
-body.dark-mode h3 {
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
   color: var(--accent-gold);
+}
+
+body.dark-mode .content-card h3 {
+  color: var(--accent-gold-light);
 }
 
 body.dark-mode .content-card {
