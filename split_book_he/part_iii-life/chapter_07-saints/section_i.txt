@@ -1,0 +1,306 @@
+[TITLE: מדת הקדוש]
+<blockquote class="fancy-quote">
+"ההוכחה להיותו איש אלוקים הייתה יכולתו לעשות ניסים." — מבחן אליהו.
+</blockquote>
+
+<div class="feature-image">
+    <div class="visual-placeholder">
+        <div class="visual-placeholder-icon">🔥</div>
+        <div class="visual-placeholder-text">אופק האירוע של הקדושה</div>
+    </div>
+</div>
+
+<h4>צורך בחיבור</h4>
+<p>אפילו עם סגולה מושלמת ולימוד, נשמה נשארת מנותקת מאלוקים אלא אם כן אור אלוקי מואר עליה בספציפיות. כדי לגשר את הפער הזה, יש לך להיות מחובר לכלי אנושי שכבר מחובר לאור החדשני זה — קדוש. זהו השורש של הציווי "התחבר לאלוקים"; מאחר שאלוקים הוא "אש אוכלת", אנו מתחברים אליו דרך אלו שמשכנים את נוכחותו.</p>
+
+<div class="concept-box">
+<strong>שתי מצבי הקדושה</strong>
+<p>קדושים פועלים בשני מצבים מובחנים יחסית לציבור.</p>
+
+<!-- Interactive Holiness States Visualization -->
+<div class="holiness-toggle-container">
+    <label class="toggle-label">
+        <input type="radio" name="holiness-state" value="visible" class="holiness-toggle" checked>
+        <span>המנור הנראה</span>
+    </label>
+    <label class="toggle-label">
+        <input type="radio" name="holiness-state" value="hidden" class="holiness-toggle">
+        <span>הקדוש הנסתר</span>
+    </label>
+</div>
+
+<div class="holiness-states">
+    <div id="visible-state" class="holiness-state active">
+        <div class="beacon-visualization">
+            <div class="saint-core"></div>
+            <div class="aura-ring aura-1"></div>
+            <div class="aura-ring aura-2"></div>
+            <div class="aura-ring aura-3"></div>
+            <div class="light-ray ray-1"></div>
+            <div class="light-ray ray-2"></div>
+            <div class="light-ray ray-3"></div>
+            <div class="light-ray ray-4"></div>
+        </div>
+        <p><strong>המנור הנראה</strong></p>
+        <p>קדושתו חודרת את האזור סביבם. אתה מרגיש "טוב" בנוכחותם מכיוון שהאורה שלהם היא מתנה לעולם. הם נקודות קבועות של המסורת.</p>
+    </div>
+    
+    <div id="hidden-state" class="holiness-state">
+        <div class="hyperbola-visualization">
+            <svg viewBox="0 0 200 200" class="hyperbola-svg">
+                <defs>
+                    <linearGradient id="hyperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.8" />
+                        <stop offset="50%" style="stop-color:#ff6b9d;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#c44569;stop-opacity:0.9" />
+                    </linearGradient>
+                </defs>
+                <!-- Hyperbola curves -->
+                <path d="M 100 20 Q 150 100 100 180" stroke="url(#hyperGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M 100 20 Q 50 100 100 180" stroke="url(#hyperGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <!-- Event horizon circle -->
+                <circle cx="100" cy="100" r="15" fill="#ffd700" opacity="0.8"/>
+                <circle cx="100" cy="100" r="20" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4"/>
+                <circle cx="100" cy="100" r="25" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.2" stroke-dasharray="2,2"/>
+                <!-- Accelerating particles -->
+                <circle cx="100" cy="40" r="3" fill="#ff6b9d" opacity="0.7" class="particle p1"></circle>
+                <circle cx="90" cy="70" r="2.5" fill="#ff6b9d" opacity="0.6" class="particle p2"></circle>
+                <circle cx="110" cy="130" r="2.5" fill="#ff6b9d" opacity="0.6" class="particle p3"></circle>
+                <circle cx="100" cy="160" r="3" fill="#ff6b9d" opacity="0.7" class="particle p4"></circle>
+            </svg>
+            <p style="text-align:center; font-size:0.85rem; margin-top:0.5rem; color:#999;">וקטור הקדושה מואץ לאלוקים</p>
+        </div>
+        <p><strong>הקדוש הנסתר (לא"ו)</strong></p>
+        <p>הם מתאיצים כל כך מהר לעבר אלוקים שהם הופכים לבלתי נראים לממציאי האינרציה. קו עולמם הוא היפרבולה — "אופק אירוע" של הקדושה.</p>
+    </div>
+</div>
+
+<style>
+.holiness-toggle-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(26,35,126,0.1));
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.toggle-label:hover {
+    background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(26,35,126,0.2));
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
+}
+
+.toggle-label input[type="radio"] {
+    cursor: pointer;
+    accent-color: #d4af37;
+}
+
+.toggle-label input[type="radio"]:checked + span {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+.holiness-states {
+    margin-top: 1.5rem;
+}
+
+.holiness-state {
+    display: none;
+    animation: fadeInUp 0.6s ease;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(250,248,240,0.5), rgba(245,240,225,0.5));
+    border-radius: 12px;
+    border-left: 4px solid #d4af37;
+}
+
+.holiness-state.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Beacon Visualization */
+.beacon-visualization {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 1rem auto 1.5rem;
+}
+
+.saint-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffd700, #d4af37);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(212,175,55,0.8), 0 0 40px rgba(212,175,55,0.4);
+    z-index: 10;
+}
+
+.aura-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    animation: pulse-aura 3s ease-in-out infinite;
+}
+
+.aura-1 {
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    opacity: 0.6;
+}
+
+.aura-2 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 0.5s;
+    opacity: 0.4;
+}
+
+.aura-3 {
+    width: 140px;
+    height: 140px;
+    animation-delay: 1s;
+    opacity: 0.2;
+}
+
+@keyframes pulse-aura {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.3; }
+}
+
+.light-ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(212,175,55,0.8), transparent);
+    transform-origin: center top;
+}
+
+.ray-1 { transform: translate(-50%, -50%) rotate(0deg); animation: rotate-ray 8s linear infinite; }
+.ray-2 { transform: translate(-50%, -50%) rotate(90deg); animation: rotate-ray 8s linear infinite 2s; }
+.ray-3 { transform: translate(-50%, -50%) rotate(180deg); animation: rotate-ray 8s linear infinite 4s; }
+.ray-4 { transform: translate(-50%, -50%) rotate(270deg); animation: rotate-ray 8s linear infinite 6s; }
+
+@keyframes rotate-ray {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Hyperbola Visualization */
+.hyperbola-visualization {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto 1.5rem;
+    height: 250px;
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(212,175,55,0.05), transparent);
+    border-radius: 12px;
+}
+
+.hyperbola-svg {
+    width: 220px;
+    height: 220px;
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.3));
+}
+
+.particle {
+    animation: accelerate-path 6s ease-in infinite;
+}
+
+.particle.p1 { animation-delay: 0s; }
+.particle.p2 { animation-delay: 1s; }
+.particle.p3 { animation-delay: 2s; }
+.particle.p4 { animation-delay: 3s; }
+
+@keyframes accelerate-path {
+    0% { opacity: 0; r: 2px; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; r: 0.5px; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .beacon-visualization {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .holiness-toggle-container {
+        gap: 0.5rem;
+    }
+    
+    .toggle-label {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.9rem;
+    }
+    
+    .hyperbola-svg {
+        width: 180px;
+        height: 180px;
+    }
+}
+</style>
+
+<script>
+document.querySelectorAll('input[name="holiness-state"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        document.querySelectorAll('.holiness-state').forEach(state => {
+            state.classList.remove('active');
+        });
+        const targetId = this.value === 'visible' ? 'visible-state' : 'hidden-state';
+        document.getElementById(targetId).classList.add('active');
+    });
+});
+</script>
+
+<h4>שלוש המפתחות לעלייה</h4>
+<p>כיצד מגיעים לרמת קדוש? על פי עדות המאסטרים, ישנם שלוש מפתחות ראשוניים המליטים את הכלי להעברת אלוקית:</p>
+<ul>
+    <li><strong>מקוואה:</strong> טבילה בגוף מים טבעי לנטרול דינים (כפי שנהוג על ידי בעל שם טוב).</li>
+    <li><strong>היחודים:</strong> תיאום על שמות אלוקיים וה"כוונות" של תפילות הבוקר.</li>
+    <li><strong>תפילה פרטית (התבודדות):</strong> שיחה כנה ויסודית עם אלוקים במקום מבודד (דרכו העיקרית של רבי נחמן).</li>
+</ul>
+
+<div class="concept-box">
+<strong>הקדוש הקרוב</strong>
+אל תתעלמי מה"קדושים" בחייך שלך: הורים וחברים אמיתיים. אמנם הם אולי לא עושים ניסים גלובליים, אהבתם עבורך היא צורה של נבואה קטנה. בשם ילד או בעצה לאהוב אחד, הם יכולים לראות תוצאות שהלוגיקה אינה יכולה להגיע. כיבוד הורים היא ציווי ראשוני; כיבוד חכם רחוק לא חייב לעומת בעיקרון היסודי הזה.
+</div>
+
+<blockquote class="fancy-quote">
+"מי שנדחק על ידי השעה, השעה עומדת בשבילו." — קצב הקדוש.
+</blockquote>
