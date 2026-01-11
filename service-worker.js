@@ -1,4 +1,5 @@
-const CACHE_NAME = 'tboi-v1';
+// Bump this value to force clients to update cached site assets when we deploy fixes
+const CACHE_NAME = 'tboi-v2';
 const ASSETS_TO_CACHE = [
     './',
     'index.html',
