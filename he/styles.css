@@ -999,8 +999,8 @@ footer p {
   p {
     font-size: 1rem;
     line-height: 1.7;
-    text-align: left;
-    /* Better for mobile */
+    text-align: start;
+    /* Use start so alignment respects `dir` (RTL/RTL) on mobile */
   }
 
   blockquote {
