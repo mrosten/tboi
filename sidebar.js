@@ -86,4 +86,51 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.error('Failed to add deploy symbol', e);
     }
+
+    // Also add a prominent deploy symbol next to the site title for clear visibility
+    try {
+        const headerTitle = document.querySelector('header h1');
+        if (headerTitle) {
+            const topSymbol = document.createElement('span');
+            topSymbol.id = 'deploy-symbol-top';
+            topSymbol.setAttribute('aria-hidden', 'true');
+            topSymbol.style.marginLeft = '12px';
+            topSymbol.style.fontSize = '1.6rem';
+            topSymbol.style.lineHeight = '1';
+            topSymbol.style.display = 'inline-block';
+            topSymbol.style.padding = '2px 6px';
+            topSymbol.style.borderRadius = '6px';
+            topSymbol.style.background = 'rgba(212,175,55,0.12)';
+            topSymbol.style.color = 'var(--primary-deep-blue)';
+            topSymbol.style.fontWeight = '700';
+            topSymbol.textContent = '⬤'; // fallback
+            headerTitle.insertAdjacentElement('afterend', topSymbol);
+
+            (async function fetchTopSymbol() {
+                const candidates = [
+                    '/deploy_symbol.json',
+                    'deploy_symbol.json',
+                    '../deploy_symbol.json',
+                    '../../deploy_symbol.json',
+                    '../../../deploy_symbol.json'
+                ];
+                for (const p of candidates) {
+                    try {
+                        const resp = await fetch(p, {cache: 'no-cache'});
+                        if (!resp.ok) continue;
+                        const j = await resp.json();
+                        if (j && j.symbol) {
+                            topSymbol.textContent = j.symbol;
+                            topSymbol.title = j.message ? j.message : `Deploy symbol: ${j.symbol}`;
+                            return;
+                        }
+                    } catch (e) {
+                        // ignore and try next
+                    }
+                }
+            })();
+        }
+    } catch (e) {
+        console.error('Failed to add top deploy symbol', e);
+    }
 });
