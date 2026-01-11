@@ -11,6 +11,13 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../../../../styles.css">
+    <style id="inline-rtl-override">
+    /* Force RTL on this page for immediate mobile testing */
+    html[dir="rtl"] p, html[dir="rtl"] blockquote, html[dir="rtl"] li, .content-card p {
+        direction: rtl !important;
+        text-align: right !important;
+    }
+    </style>
 </head>
 <body>
     <!-- Sidebar - Content Embedded -->
