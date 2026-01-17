@@ -1,0 +1,44 @@
+[
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_i\\chapter_12\\section_xii.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_ii/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_ii\\index.html"
+  },
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_iii_life\\chapter_07\\section_vi.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_iii_politics/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_iii_politics\\index.html"
+  },
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_iii_politics\\chapter_03\\section_ii.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_iv/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_iv\\index.html"
+  },
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_iii_politics\\chapter_03\\section_vi.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_iv/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_iv\\index.html"
+  },
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_iv\\chapter_04\\section_ii.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_v/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_v\\index.html"
+  },
+  {
+    "Site": "English",
+    "SourceFile": ".\\parts\\part_iv\\chapter_04\\section_v.html",
+    "Direction": "next",
+    "BrokenHref": "../../parts/part_v/index.html",
+    "ExpectedPath": ".\\parts\\parts\\part_v\\index.html"
+  }
+]
