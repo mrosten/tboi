@@ -4,42 +4,31 @@ param([string]$Language = "en")
 # This script reads section text files and generates corresponding HTML pages
 
 
-if ($IsWindows) {
-    if ($Language -eq "he") {
-        $splitBookPath = "c:\myantigravity\cantorwilliam\src\tboi\split_book_he"
-        $websitePath = "c:\myantigravity\cantorwilliam\src\tboi\he"
-    } else {
-        $splitBookPath = "c:\myantigravity\cantorwilliam\src\tboi\split_book"
-        $websitePath = "c:\myantigravity\cantorwilliam\src\tboi"
-    }
-} else {
-    # Running on non-Windows (Linux/macOS) — prefer repository-relative paths
-    # Compute script root robustly: prefer PSScriptRoot, then MyInvocation, then current directory
-    if ($PSBoundParameters.ContainsKey('PSCommandPath')) {
-        $scriptRoot = Split-Path -Parent $PSBoundParameters['PSCommandPath']
-    }
-    if (-not $scriptRoot) {
-        if ($PSScriptRoot) {
-            $scriptRoot = $PSScriptRoot
-        }
-        elseif ($MyInvocation -and $MyInvocation.MyCommand.Path) {
-            $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-        }
-        else {
-            $scriptRoot = (Get-Location).Path
-        }
-    }
-
-    if ($Language -eq "he") {
-        $splitRel = 'split_book_he'
-        $webRel = 'he'
-    } else {
-        $splitRel = 'split_book'
-        $webRel = '.'
-    }
-    $splitBookPath = Join-Path $scriptRoot $splitRel
-    $websitePath = Join-Path $scriptRoot $webRel
+# Compute script root robustly: prefer PSScriptRoot, then MyInvocation, then current directory
+if ($PSBoundParameters.ContainsKey('PSCommandPath')) {
+    $scriptRoot = Split-Path -Parent $PSBoundParameters['PSCommandPath']
 }
+if (-not $scriptRoot) {
+    if ($PSScriptRoot) {
+        $scriptRoot = $PSScriptRoot
+    }
+    elseif ($MyInvocation -and $MyInvocation.MyCommand.Path) {
+        $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+    }
+    else {
+        $scriptRoot = (Get-Location).Path
+    }
+}
+
+if ($Language -eq "he") {
+    $splitRel = 'split_book_he'
+    $webRel = 'he'
+} else {
+    $splitRel = 'split_book'
+    $webRel = '.'
+}
+$splitBookPath = Join-Path $scriptRoot $splitRel
+$websitePath = Join-Path $scriptRoot $webRel
 
 # Localization Dictionary
 $L = @{
@@ -267,65 +256,78 @@ function New-SectionHTML {
     
     $pageFootnotes = @()
     $inRawBlock = $false
+    $nestingLevel = 0
     
     foreach ($line in $lines) {
         $trimmed = $line.Trim()
-        if ($trimmed -match '\[(\d+)\]') {
-            # Footnote reference - likely inline or end of line
-            # We need to process the whole line to keep the marker in text, and also collect the footnote content
-            
-            # Simple approach: assume marker is separate or part of line. 
-            # Better approach: Regex replace to add superscript AND collect ID.
-            
-            $processedLine = $trimmed -replace '\[(\d+)\]', '<sup>[$1]</sup>'
-            $currentPara += "$processedLine "
-            
-            # Extract IDs for footer
-            $matchesResult = [regex]::Matches($trimmed, '\[(\d+)\]')
-            foreach ($m in $matchesResult) {
-                $fid = $m.Groups[1].Value
-                if ($Footnotes.ContainsKey($fid)) {
-                    $pageFootnotes += @{ ID = $fid; Text = $Footnotes[$fid] }
-                }
-            }
-        }
-        elseif ($trimmed -match '\[IMAGE:\s*(.*?)\]') {
-            # Image tag - convert to div with img
-            if ($currentPara.Trim()) {
-                $paragraphs += "<p>$($currentPara.Trim())</p>"
-                $currentPara = ""
-            }
-            $imageFile = $matches[1].Trim()
-            $paragraphs += "<div class='image-container'><img src='../../../images/$imageFile' alt='Book Image' class='book-image'></div>"
-        }
-        elseif ($trimmed -match '^Chapter \d+') {
-            # Skip chapter headers in content
-            continue
-        }
-        elseif ($trimmed -match '^Section [IVX]+') {
-            # Skip section headers
-            continue
-        }
-        elseif ($trimmed -match '^<(script|style|table|thead|tbody|tfoot|div|blockquote|h[1-6]|p|ul|ol|li|hr|section|aside|nav|header|footer|hr)') {
-            # Start of raw block
+        
+        $isRawStart = $trimmed -match '^<(script|style|table|thead|tbody|tfoot|div|blockquote|h[1-6]|p|ul|ol|li|hr|section|aside|nav|header|footer)'
+        
+        if ($isRawStart -and -not $inRawBlock) {
             if ($currentPara.Trim()) {
                 $paragraphs += "<p>$($currentPara.Trim())</p>"
                 $currentPara = ""
             }
             $inRawBlock = $true
+            $nestingLevel = 0
+        }
+        
+        if ($inRawBlock) {
+            # Count tag nesting changes on this line
+            $openMatches = [regex]::Matches($trimmed, '<(script|style|table|thead|tbody|tfoot|div|blockquote|h[1-6]|p|ul|ol|li|section|aside|nav|header|footer)\b')
+            $closeMatches = [regex]::Matches($trimmed, '</(script|style|table|thead|tbody|tfoot|div|blockquote|h[1-6]|p|ul|ol|li|section|aside|nav|header|footer)\b')
+            
+            $nestingLevel += $openMatches.Count
+            $nestingLevel -= $closeMatches.Count
+            
+            # Special case for self-closing tags like <hr>
+            if ($trimmed -match '^<(hr)\b') {
+                $nestingLevel -= 1
+            }
+            
             $paragraphs += $trimmed
+            
+            if ($nestingLevel -le 0) {
+                $inRawBlock = $false
+                $nestingLevel = 0
+            }
         }
         else {
-            if ($inRawBlock) {
-                $paragraphs += $trimmed
+            # Normal line processing
+            if ($trimmed -match '\[(\d+)\]') {
+                # Footnote reference - likely inline or end of line
+                $processedLine = $trimmed -replace '\[(\d+)\]', '<sup>[$1]</sup>'
+                $currentPara += "$processedLine "
+                
+                # Extract IDs for footer
+                $matchesResult = [regex]::Matches($trimmed, '\[(\d+)\]')
+                foreach ($m in $matchesResult) {
+                    $fid = $m.Groups[1].Value
+                    if ($Footnotes.ContainsKey($fid)) {
+                        $pageFootnotes += @{ ID = $fid; Text = $Footnotes[$fid] }
+                    }
+                }
+            }
+            elseif ($trimmed -match '\[IMAGE:\s*(.*?)\]') {
+                # Image tag - convert to div with img
+                if ($currentPara.Trim()) {
+                    $paragraphs += "<p>$($currentPara.Trim())</p>"
+                    $currentPara = ""
+                }
+                $imageFile = $matches[1].Trim()
+                $paragraphs += "<div class='image-container'><img src='../../../images/$imageFile' alt='Book Image' class='book-image'></div>"
+            }
+            elseif ($trimmed -match '^Chapter \d+') {
+                # Skip chapter headers in content
+                continue
+            }
+            elseif ($trimmed -match '^Section [IVX]+') {
+                # Skip section headers
+                continue
             }
             else {
                 $currentPara += "$trimmed "
             }
-        }
-        
-        if ($trimmed -match '^</(script|style|table|div|blockquote|h[1-6]|p|ul|ol|li|section|aside|nav|header|footer)') {
-            $inRawBlock = $false
         }
         
         # Check for sentence endings to potentially break paragraphs

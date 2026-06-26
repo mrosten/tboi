@@ -8,8 +8,22 @@ param(
 $ErrorActionPreference = 'Stop'
 Write-Host "Starting Quick Build for $FilePath ($Language)..."
 
-# 1. Setup Paths
-$rootDir = "c:\myantigravity\cantorwilliam\src\tboi"
+# 1. Setup Paths (Relative to script folder)
+if ($PSBoundParameters.ContainsKey('PSCommandPath')) {
+    $scriptRoot = Split-Path -Parent $PSBoundParameters['PSCommandPath']
+}
+if (-not $scriptRoot) {
+    if ($PSScriptRoot) {
+        $scriptRoot = $PSScriptRoot
+    }
+    elseif ($MyInvocation -and $MyInvocation.MyCommand.Path) {
+        $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+    }
+    else {
+        $scriptRoot = (Get-Location).Path
+    }
+}
+$rootDir = $scriptRoot
 
 # Handle language-specific output paths
 # Hebrew goes to src\tboi\he\...

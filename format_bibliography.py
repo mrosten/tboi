@@ -35,7 +35,8 @@ def parse_bibliography(file_path):
     return html
 
 if __name__ == "__main__":
-    base_dir = r"c:\myantigravity\cantorwilliam\src\tboi"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = script_dir
     source_file = os.path.join(base_dir, "split_book", "8-bibliography.txt")
     output_file = os.path.join(base_dir, "bibliography_content.html")
     

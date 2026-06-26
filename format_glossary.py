@@ -78,7 +78,8 @@ def parse_glossary(file_path):
     return html_content, terms
 
 if __name__ == "__main__":
-    base_dir = r"c:\myantigravity\cantorwilliam\src\tboi"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = script_dir
     source_file = os.path.join(base_dir, "split_book", "7-glossary.txt")
     output_html = os.path.join(base_dir, "glossary_content.html")
     output_json = os.path.join(base_dir, "glossary_terms.json")
