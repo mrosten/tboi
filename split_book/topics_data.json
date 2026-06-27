@@ -1,0 +1,551 @@
+[
+  {
+    "id": "god",
+    "term": "God",
+    "term_he": "אלוהים",
+    "search_keys": ["god", "creator", "divine", "tetragrammaton"],
+    "search_keys_he": ["אלוהים", "הבורא", "שם ה'", "אינסוף"],
+    "essay": "The absolute unity, substance, and prime cause of all existence. The book presents God not as a distant ruler, but as the single infinite substance whose mind is reflected in all physical and mathematical laws, reconciling logical rationalism with traditional Kabbalistic faith.",
+    "essay_he": "סיבת הסיבות, העצם המוחלט והמקור העליון של כל היש. הספר מציג את אלוהים לא כשליט חיצוני מרוחק, אלא כעצם האינסופי היחיד ששכלו משתקף בכל חוקי הטבע והמתמטיקה, ובכך הוא מאחד בין הרציונליזם הלוגי לבין האמונה הקבלית המסורתית."
+  },
+  {
+    "id": "spinoza",
+    "term": "Spinoza",
+    "term_he": "שפינוזה",
+    "search_keys": ["spinoza", "baruch spinoza"],
+    "search_keys_he": ["שפינוזה", "ברוך שפינוזה"],
+    "essay": "Baruch Spinoza (1632–1677). The author analyzes Spinoza's geometric proof of God's substance, demonstrating that when cleared of pantheistic misunderstandings, his rational system aligns perfectly with the absolute unity of God in Kabbalah, where the universe is an emanation of God rather than God Himself.",
+    "essay_he": "ברוך שפינוזה (1632–1677). המחבר מנתח את הוכחתו הגיאומטרית של שפינוזה לקיומו של אלוהים כעצם יחיד, ומראה כי כאשר מנקים אותה מפרשנויות פנתיאיסטיות שגויות, המערכת הלוגית שלו עולה בקנה אחד עם אחדות השם המוחלטת בקבלה (שבה היקום נאצל מאלוהים אך אינו אלוהים עצמו)."
+  },
+  {
+    "id": "faith",
+    "term": "Faith",
+    "term_he": "אמונה",
+    "search_keys": ["faith", "belief", "devotion"],
+    "search_keys_he": ["אמונה", "אמונות"],
+    "essay": "The subjective alignment of the soul with the divine light. Rather than blind dogmatic belief, the author defines faith as a dynamic connection to the infinite source, serving as the essential tuning mechanism that allows a person to absorb spiritual waves.",
+    "essay_he": "ההתכווננות הסובייקטיבית של הנשמה אל האור האלוהי. במקום אמונה דוגמטית עיוורת, המחבר מגדיר את האמונה כחיבור דינמי למקור האינסוף, המשמש כמנגנון כיוונון חיוני המאפשר לאדם לקלוט תדרים רוחניים."
+  },
+  {
+    "id": "reason",
+    "term": "Reason",
+    "term_he": "תבונה (שכל)",
+    "search_keys": ["reason", "rational", "intellect", "logic"],
+    "search_keys_he": ["תבונה", "שכל", "רציונלי", "לוגיקה"],
+    "essay": "Philosophical rationalism and its role in human life. The author demonstrates that human intellect, when pursued with rigorous logic, naturally reaches its limits and points toward the necessity of prophecy and divine revelation to guide moral choices.",
+    "essay_he": "הרציונליזם הפילוסופי ותפקידו בחיי האדם. המחבר מראה כי השכל האנושי, כאשר הוא מונחה על ידי לוגיקה קפדנית, מגיע באופן טבעי לגבולותיו ומצביע על נחיצות הנבואה וההתגלות האלוהית כדי להנחות את הבחירה המוסרית."
+  },
+  {
+    "id": "purpose-creation",
+    "term": "Purpose of Creation",
+    "term_he": "תכלית הבריאה",
+    "search_keys": ["purpose of creation", "bestow goodness"],
+    "search_keys_he": ["תכלית הבריאה", "להיטיב"],
+    "essay": "The ultimate driving force of existence. Drawing on Kabbalistic teachings, the author defines the purpose of creation as God's desire to bestow absolute goodness and pleasure upon independent vessels who possess free will.",
+    "essay_he": "כוח המניע העליון של הקיום. בהתבסס על תורת הקבלה, המחבר מגדיר את תכלית הבריאה כרצונו של הבורא להיטיב ולהשפיע עונג ושפע מוחלט לנבראים עצמאיים בעלי בחירה חופשית."
+  },
+  {
+    "id": "free-will",
+    "term": "Free Will",
+    "term_he": "בחירה חופשית",
+    "search_keys": ["free will", "choice", "bechira", "horizontal axis", "horizontal coordinate"],
+    "search_keys_he": ["בחירה חופשית", "בחירה", "הציר האופקי"],
+    "essay": "A fundamental law of spiritual energy. The author explains that good and evil are horizontal choices (closeness to the light) rather than vertical inheritances. Every moral choice directly resolves spiritual entropy and builds the soul's vessels.",
+    "essay_he": "חוק יסוד של אנרגיה רוחנית. המחבר מסביר כי טוב ורע הם בחירות אופקיות (קרבה לאור) ולא ירושה אנכית קבועה מראש. כל בחירה מוסרית מפחיתה את האנטרופיה הרוחנית ומעצבת את כלי הנשמה."
+  },
+  {
+    "id": "pleasure",
+    "term": "Pleasure",
+    "term_he": "עונג",
+    "search_keys": ["pleasure", "delight", "satisfaction"],
+    "search_keys_he": ["עונג", "תענוג"],
+    "essay": "The ultimate spiritual reward. The author distinguishes between animalistic transient pleasures and the eternal spiritual delight that comes from refining one's character and connecting directly to the divine light.",
+    "essay_he": "הגמול הרוחני העליון. המחבר מבחין בין תענוגות בהמיים חולפים לבין עונג רוחני נצחי הנובע מזיכוך המידות והתחברות ישירה אל האור האלוהי."
+  },
+  {
+    "id": "physics-spirit",
+    "term": "Physics of Spirit",
+    "term_he": "פיזיקה של הרוח",
+    "search_keys": ["physics of spirit", "physical laws", "spirit and physics"],
+    "search_keys_he": ["פיזיקה של הרוח", "חוקי הפיזיקה"],
+    "essay": "The structural mappings explored in this book between physical laws (such as thermodynamics, fields, and circuits) and spiritual energy dynamics. It argues that physics is simply the study of spiritual laws condensed into material vessels.",
+    "essay_he": "המיפויים המבניים הנחקרים בספר זה בין חוקי הפיזיקה (כגון תרמודינמיקה, שדות ומעגלים) לבין הדינמיקה האנרגטית הרוחנית. הספר טוען כי הפיזיקה היא פשוט חקר חוקי הרוח כפי שהם מתעבים בתוך כלים חומריים."
+  },
+  {
+    "id": "spirit",
+    "term": "Spirit",
+    "term_he": "רוח",
+    "search_keys": ["spirit", "spiritual", "soul"],
+    "search_keys_he": ["רוח", "רוחני", "נשמה", "נשמות"],
+    "essay": "The non-material energy and light stepped down through the spiritual worlds. The author explains that the spirit is not a vague abstract concept, but a structured field of frequencies that sustains physical reality and guides human evolution.",
+    "essay_he": "האנרגיה והאור הבלתי גשמיים המצטמצמים דרך העולמות הרוחניים. המחבר מסביר כי הרוח אינה מושג מופשט ומעורפל, אלא שדה מובנה של תדרים המקיים את המציאות הפיזית ומכוון את התפתחות האדם."
+  },
+  {
+    "id": "history",
+    "term": "History",
+    "term_he": "היסטוריה",
+    "search_keys": ["history", "historic", "cycle of return", "progression"],
+    "search_keys_he": ["היסטוריה", "היסטורי", "מעגל השיבה"],
+    "essay": "The unified progression of human consciousness. The author details the history of mankind as a dialectic of freedom and a cycle of return, where civilizations rise and fall to allow the gradual refinement of human choice toward ultimate redemption.",
+    "essay_he": "התקדמותה המאוחדת של התודעה האנושית. המחבר מתאר את היסטוריית האדם כדיאלקטיקה של חירות ומעגל של שיבה, שבהם תרבויות עולות ונופלות כדי לאפשר זיכוך הדרגתי של הבחירה לקראת גאולה שלמה."
+  },
+  {
+    "id": "piety",
+    "term": "Piety",
+    "term_he": "יראת שמיים",
+    "search_keys": ["piety", "pious", "humility", "chassidut"],
+    "search_keys_he": ["יראת שמיים", "חסידות", "ענווה"],
+    "essay": "The path of character refinement (Chassidut) and humility. The author explains that true piety is the process of silencing the ego's noise, allowing the quiet light of the soul to act as the primary guide for actions and relationships.",
+    "essay_he": "נתיב זיכוך המידות והענווה. המחבר מסביר כי יראת שמיים אמיתית היא התהליך שבו משתיקים את רעש האגו, ומאפשרים לאור השקט של הנשמה לפעול כמורה הדרך הראשי למעשים וליחסים עם הזולת."
+  },
+  {
+    "id": "wisdom-heart",
+    "term": "Wisdom of the Heart",
+    "term_he": "חכמת הלב",
+    "search_keys": ["wisdom of the heart", "heart", "intuitive"],
+    "search_keys_he": ["חכמת הלב", "לב פנימי", "אינטואיטיבי"],
+    "essay": "The emotional and intuitive refinement that allows a person to absorb higher spiritual wavelengths. The author argues that the mind's logic must be synthesized with the heart's wisdom to capture the true frequency of divine truth.",
+    "essay_he": "הזיכוך הרגשי והאינטואיטיבי המאפשר לאדם לקלוט אורכי גל רוחניים גבוהים. המחבר טוען כי יש לשלב את לוגיקת השכל עם חוכמת הלב כדי לקלוט את התדר האמיתי של האמת האלוהית."
+  },
+  {
+    "id": "service-god",
+    "term": "Service of God",
+    "term_he": "עבודת השם",
+    "search_keys": ["service of god", "serving god"],
+    "search_keys_he": ["עבודת השם", "עבודת ה'"],
+    "essay": "Physical and mental acts that draw divine energy into the world. The author defines this service as the primary mechanism for refining the animal soul and converting raw physical energy into structured spiritual vessels.",
+    "essay_he": "פעולות פיזיות ומחשבתיות הממשיכות שפע רוחני לעולם. המחבר מגדיר עבודה זו כמנגנון הראשי לזיכוך הנפש הבהמית והמרת אנרגיה גשמית גולמית לכלים רוחניים מובנים."
+  },
+  {
+    "id": "happiness",
+    "term": "Happiness",
+    "term_he": "אושר",
+    "search_keys": ["happiness", "joy", "resonant joy"],
+    "search_keys_he": ["אושר", "שמחה"],
+    "essay": "Spiritual resonance and joy. The author states that happiness is not a material acquisition but a natural state of resonance that occurs when a person's thoughts and actions align with the divine frequency of their unique soul root.",
+    "essay_he": "תהודה רוחנית ושמחה פנימית. המחבר מסביר כי האושר אינו קניין חומרי אלא מצב טבעי של תהודה המתרחש כאשר מחשבות האדם ומעשיו מסתנכרנים עם התדר האלוהי של שורש נשמתו הייחודי."
+  },
+  {
+    "id": "spiritual-energy",
+    "term": "Spiritual Energy",
+    "term_he": "אנרגיה רוחנית",
+    "search_keys": ["spiritual energy", "energy flow", "field energy"],
+    "search_keys_he": ["אנרגיה רוחנית", "זרימת האור", "אנרגיית שדה"],
+    "essay": "The flow of divine light stepped down through the worlds. The author treats spiritual energy as a measurable field that responds to human actions, where mitzvot act as collectors and unrectified actions cause energy leaks.",
+    "essay_he": "זרימת האור האלוהי המצטמצם דרך העולמות. המחבר מתייחס לאנרגיה רוחנית כאל שדה מדיד המגיב למעשי האדם, שבו המצוות פועלות כקולטי אנרגיה ואילו פעולות לא מתוקנות גורמות לדליפות אנרגטיות."
+  },
+  {
+    "id": "rlc-circuit",
+    "term": "R-L-C Circuit",
+    "term_he": "מעגל RLC",
+    "search_keys": ["r-l-c circuit", "rlc circuit", "resistor-inductor-capacitor", "circuit"],
+    "search_keys_he": ["מעגל RLC", "נגד-סליל-קבל", "מעגל חשמלי"],
+    "essay": "The Resistor-Inductor-Capacitor electrical circuit, used by the author as a metaphor for the soul. The resistor represents character refinement, the inductor represents intellectual study, and the capacitor represents physical action. All three must align to achieve resonance with the divine frequency.",
+    "essay_he": "מעגל חשמלי המכיל נגד, סליל וקבל, המשמש את המחבר כמטאפורה לנפש. הנגד מייצג את זיכוך המידות, הסליל מייצג את לימוד השכל, והקבל מייצג את המעשה הפיזי. שלושתם חייבים להתלכד כדי להגיע לתהודה עם התדר האלוהי."
+  },
+  {
+    "id": "reward",
+    "term": "Reward",
+    "term_he": "שכר",
+    "search_keys": ["reward", "proximity to the light"],
+    "search_keys_he": ["שכר", "קרבה לאור"],
+    "essay": "The natural consequence of spiritual alignment. The author describes reward not as an arbitrary prize, but as the inherent state of closeness to the Column of Infinite Light, resulting from choices that reduce spiritual entropy.",
+    "essay_he": "התוצאה הטבעית של התאמה רוחנית. המחבר מתאר את השכר לא כפרס שרירותי, אלא כמצב המובנה של קרבה לעמוד האור האינסופי, הנובע מבחירות המפחיתות את האנטרופיה הרוחנית."
+  },
+  {
+    "id": "punishment",
+    "term": "Punishment",
+    "term_he": "עונש",
+    "search_keys": ["punishment", "distance from the light", "friction"],
+    "search_keys_he": ["עונש", "התרחקות מן האור"],
+    "essay": "The natural consequence of spiritual deviation. The author defines punishment as the inherent friction, pain, and distance from the divine light experienced when a person acts against the invariant laws of the Torah.",
+    "essay_he": "התוצאה הטבעית של סטייה רוחנית. המחבר מגדיר את העונש כחיכוך, כאב ומרחק מובנים מן האור האלוהי, הנחווים כאשר האדם פועל בניגוד לחוקיה הקבועים של התורה."
+  },
+  {
+    "id": "justice",
+    "term": "Justice",
+    "term_he": "צדק",
+    "search_keys": ["justice", "balance of justice", "cause and effect"],
+    "search_keys_he": ["צדק", "מאזני צדק", "סיבה ותוצאה"],
+    "essay": "The absolute balance of cause and effect in the universe. The author explains that justice is an invariant spiritual equation where every action receives a proportional and inevitable energy return, leaving no room for cosmic randomness.",
+    "essay_he": "האיזון המוחלט של סיבה ותוצאה ביקום. המחבר מסביר כי הצדק הוא משוואה רוחנית קבועה שבה כל מעשה מקבל החזר אנרגטי יחסי ובלתי נמנע, ללא כל מקום לאקראיות קוסמית."
+  },
+  {
+    "id": "eras-man",
+    "term": "Eras of Man",
+    "term_he": "עידני האדם",
+    "search_keys": ["eras of man", "historical phases", "evolution of consciousness"],
+    "search_keys_he": ["עידני האדם", "תקופות היסטוריות"],
+    "essay": "The historical epochs of spiritual development. The author details these eras as steps in the evolution of human consciousness and moral capability, progressing from basic survival to complex intellectual and spiritual integration.",
+    "essay_he": "תקופות היסטוריות של התפתחות רוחנית. המחבר מפרט עידנים אלו כשלבים באבולוציה של התודעה האנושית והיכולת המוסרית, המתקדמים מקיום בסיסי לאינטגרציה שכלית ורוחנית מורכבת."
+  },
+  {
+    "id": "redemption",
+    "term": "Redemption",
+    "term_he": "גאולה",
+    "search_keys": ["redemption", "messianic", "ultimate rectification"],
+    "search_keys_he": ["גאולה", "משיחי", "התיקון השלם"],
+    "essay": "The ultimate rectification (Tikkun) of the universe. The author defines redemption as the complete gathering and elevation of all fallen sparks, aligning the physical world permanently with the Column of Infinite Light.",
+    "essay_he": "התיקון השלם והסופי של היקום. המחבר מגדיר את הגאולה כאיסוף והעלאה מלאה של כל ניצוצות הקדושה שנפלו, וחיבורו הקבוע של העולם הגשמי אל עמוד האור האינסופי."
+  },
+  {
+    "id": "kabbalah",
+    "term": "Kabbalah",
+    "term_he": "קבלה",
+    "search_keys": ["kabbalah", "kabbalistic", "esoteric dimensions"],
+    "search_keys_he": ["קבלה", "קבלי", "תורת הנסתר"],
+    "essay": "The mathematical equations of the Torah's hidden dimensions. Rather than emotional mysticism, the author treats Kabbalah as the precise study of the step-down of divine light, providing the formulas for how spiritual energy shapes reality.",
+    "essay_he": "מערכת המשוואות המתמטיות של הממדים הגנוזים בתורה. במקום מיסטיקה רגשית, המחבר מתייחס לקבלה כאל חקר מדויק של צמצום האור האלוהי, המציע את הנוסחאות לאופן שבו אנרגיה רוחנית מעצבת מציאות."
+  },
+  {
+    "id": "talmud",
+    "term": "Talmud",
+    "term_he": "תלמוד",
+    "search_keys": ["talmud", "gemara", "gemarah", "multidimensional talmud"],
+    "search_keys_he": ["תלמוד", "גמרא", "דיוני הגמרא"],
+    "essay": "A multidimensional legal and logical system. The author explains that the Talmud's debates represent the invariance of divine law under different physical, historical, and cultural transformations, establishing a structured path for human intellect.",
+    "essay_he": "מערכת חוקים ולוגיקה רב-ממדית. המחבר מסביר כי מחלוקות התלמוד מייצגות את נצחיות ההלכה שאינה משתנה גם תחת תמורות פיזיות, היסטוריות ותרבותיות שונות, ובכך מתוות נתיב מובנה לשכל האנושי."
+  },
+  {
+    "id": "halachah",
+    "term": "Halachah",
+    "term_he": "הלכה",
+    "search_keys": ["halachah", "halacha", "jewish law", "invariant code"],
+    "search_keys_he": ["הלכה", "הלכות", "קוד הנצח"],
+    "essay": "The code of eternity. The author defines Halachah as an invariant legal framework that remains constant across historical transformations, translating absolute divine energy into physical daily actions that elevate the material world.",
+    "essay_he": "קוד הנצח. המחבר מגדיר את ההלכה כמערכת חוקים קבועה (אינווריאנטית) שאינה משתנה תחת שינויים היסטוריים, המתרגמת אנרגיה אלוהית מוחלטת לפעולות יומיומיות פיזיות המעלות את החומר."
+  },
+  {
+    "id": "science",
+    "term": "Science",
+    "term_he": "מדע",
+    "search_keys": ["science", "scientific", "study of vessels"],
+    "search_keys_he": ["מדע", "מדעי", "חקר הכלים"],
+    "essay": "The study of physical vessels. The author explains that science investigates the physical structures (vessels) that contain and express spiritual energy, showing that physical laws are simply the material projections of Kabbalistic dynamics.",
+    "essay_he": "חקר הכלים הפיזיים. המחבר מסביר כי המדע חוקר את המבנים הפיזיים (הכלים) המכילים ומבטאים אנרגיה רוחנית, ומראה כי חוקי הטבע הם פשוט השתקפות גשמית של דינמיקות קבליות."
+  },
+  {
+    "id": "decision-strategy",
+    "term": "Strategy of Decision",
+    "term_he": "אסטרטגיית החלטה",
+    "search_keys": ["strategy of decision", "meeting of his close family", "family vote"],
+    "search_keys_he": ["אסטרטגיית החלטה", "רוב קולות"],
+    "essay": "A practical life strategy. The author recommends that major life decisions should be decided by a vote of one's close family and real friends, which acts as a collective check against the individual ego's biases and desires.",
+    "essay_he": "אסטרטגיית חיים מעשית. המחבר ממליץ כי החלטות משמעותיות בחיים יתקבלו על פי הצבעה ורוב קולות של בני המשפחה הקרובים וידידי האמת, מה שמשמש כבלם קולקטיבי נגד הטיות ורצונות האגו של הפרט."
+  },
+  {
+    "id": "prayer",
+    "term": "Prayer",
+    "term_he": "תפילה",
+    "search_keys": ["prayer", "praying", "tefilah"],
+    "search_keys_he": ["תפילה", "מתפלל", "תפילות"],
+    "essay": "Tefilah, defined as the tuning of the heart's frequency. The author explains that prayer is not a petition to change God's mind, but a mechanism to align the human vessel to receive and resonance with the infinite divine light.",
+    "essay_he": "תפילה, המוגדרת ככיוונון תדר הלב. המחבר מסביר כי התפילה אינה בקשה לשנות את רצון הבורא, אלא מנגנון להתאמת הכלי האנושי לקלוט ולהדהד את האור האלוהי האינסופי."
+  },
+  {
+    "id": "shabbat",
+    "term": "Shabbat",
+    "term_he": "שבת",
+    "search_keys": ["shabbat", "sabbath", "seventh day"],
+    "search_keys_he": ["שבת", "שבתות", "היום השביעי"],
+    "essay": "The seventh day of rest. The author defines Shabbat as a spiritual sanctuary in time where human beings step out of physical creative work (vessel building) to connect directly to the infinite source, conserving spiritual energy.",
+    "essay_he": "יום המנוחה השביעי. המחבר מגדיר את השבת כאי של קדושה בזמן, שבו האדם שובת ממלאכת היצירה הפיזית (בניית הכלים) כדי להתחבר ישירות למקור הרוחני האינסופי ולשמר אנרגיה רוחנית."
+  },
+  {
+    "id": "festivals",
+    "term": "Festivals",
+    "term_he": "מועדים (חגים)",
+    "search_keys": ["festivals", "festival", "holiday", "time portals"],
+    "search_keys_he": ["מועדים", "חגים", "שערי זמן"],
+    "essay": "Spiritual time portals. The author explains that the Jewish holidays are specific windows in the year that transmit unique spiritual energy frequencies corresponding to historical events and natural agricultural cycles.",
+    "essay_he": "שערי זמן רוחניים. המחבר מסביר כי החגים היהודיים הם חלונות זמן מיוחדים במעגל השנה, המשדרים תדרי אנרגיה רוחנית ייחודיים התואמים את האירועים ההיסטוריים והמחזורים החקלאיים."
+  },
+  {
+    "id": "kashrut",
+    "term": "Kashrut",
+    "term_he": "כשרות",
+    "search_keys": ["kashrut", "kosher", "dietary laws"],
+    "search_keys_he": ["כשרות", "כשר", "מאכלות אסורים"],
+    "essay": "Dietary laws that refine the biological vessel. The author explains that food carries spiritual energy frequencies; keeping kosher prevents the absorption of dense, negative energies that clog the soul's ability to receive higher light.",
+    "essay_he": "חוקי המזון המזככים את הכלי הביולוגי. המחבר מסביר כי המאכלים נושאים תדרי אנרגיה רוחנית; שמירת כשרות מונעת ספיגת אנרגיות עכורות החוסמות את יכולת הנשמה לקלוט אור עליון."
+  },
+  {
+    "id": "israel",
+    "term": "Israel",
+    "term_he": "ישראל",
+    "search_keys": ["israel", "land of israel", "jewish people", "antenna"],
+    "search_keys_he": ["ישראל", "ארץ ישראל", "עם ישראל", "אנטנה"],
+    "essay": "The land and people of unique spiritual root and covenant. The author defines Israel as a collective antenna meant to draw divine light and step it down to distribute spiritual energy and ethical alignment to all families of the earth.",
+    "essay_he": "עם וארץ בעלי שורש רוחני וברית מיוחדת. המחבר מגדיר את ישראל כ'אנטנה' קולקטיבית שנועדה לקלוט את האור האלוהי, לצמצמו ולהפיץ אנרגיה רוחנית והכוונה מוסרית לכל משפחות האדמה."
+  },
+  {
+    "id": "marriage",
+    "term": "Marriage",
+    "term_he": "נישואין",
+    "search_keys": ["marriage", "mate", "soul-mate", "union of souls"],
+    "search_keys_he": ["נישואין", "חתונה", "בן זוג", "בת זוג", "זיווג"],
+    "essay": "The sanctified union of souls. The author explains that true marriage requires matching roots of the soul, approved by mature family members, serving as a resonant structure that allows the divine presence (Shechinah) to rest.",
+    "essay_he": "איחוד מקודש של נשמות. המחבר מסביר כי נישואי אמת דורשים התאמה של שורשי הנשמה ואישור של חברי משפחה מנוסים, מה שיוצר מבנה תהודה המאפשר להשראת השכינה לשכון ביניהם."
+  },
+  {
+    "id": "family",
+    "term": "Family",
+    "term_he": "משפחה",
+    "search_keys": ["family", "families", "family tree"],
+    "search_keys_he": ["משפחה", "משפחות", "עץ משפחתי"],
+    "essay": "An organic tree and an externalized fragment of one's own soul. The author writes that family represents a shared spiritual root. Cutting off family damages one's own soul structure. Sticking together through ups and downs preserves spiritual inertia.",
+    "essay_he": "עץ אורגני וחלק בלתי נפרד מנשמתו של האדם. המחבר כותב כי המשפחה מייצגת שורש רוחני משותף. ניתוק הקשר עימה פוגע במבנה הנשמה של האדם עצמו. הדבקות המשפחתית בעליות ובמורדות משמרת את האינרציה הרוחנית."
+  },
+  {
+    "id": "father",
+    "term": "Father",
+    "term_he": "אב",
+    "search_keys": ["father", "role of the father", "fathers"],
+    "search_keys_he": ["אב", "אבות", "מעמד האב"],
+    "essay": "The structural and authority pillar of the family. The author argues that the erosion of the place of the father in modern society is the primary cause for the breakup of the family and the resulting political and social chaos.",
+    "essay_he": "עמוד התווך המבני והסמכותי של התא המשפחתי. המחבר טוען כי שחיקת מעמד האב בחברה המודרנית היא הגורם המרכזי לפירוק המשפחה ולכאוס הפוליטי והחברתי שבא בעקבותיו."
+  },
+  {
+    "id": "sex",
+    "term": "Sex",
+    "term_he": "מיניות",
+    "search_keys": ["sex", "sexual", "cloning", "physical love"],
+    "search_keys_he": ["מיניות", "מין", "שיבוט"],
+    "essay": "The physical manifestation of condensed spiritual light. The author explains that when sex is sanctified within marriage, it acts as a powerful channel to draw spiritual energy and create life, warning against the modern separation of love and law.",
+    "essay_he": "ההתגשמות הפיזית של אור רוחני מעובה. המחבר מסביר כי כאשר יחסי המין מקודשים במסגרת הנישואין, הם פועלים כצינור רב-עוצמה להמשכת שפע רוחני ויצירת חיים, ומזהיר מפני ההפרדה המודרנית בין האהבה לחוק."
+  },
+  {
+    "id": "condensed-light",
+    "term": "Condensed Light",
+    "term_he": "אור מעובה",
+    "search_keys": ["condensed light", "highly condensed", "stepped-down light"],
+    "search_keys_he": ["אור מעובה", "אור דחוס", "אור מצומצם"],
+    "essay": "The physical universe. The author details the material world as highly condensed spiritual energy or stepped-down divine light, where physical laws reflect the underlying equations of the spiritual realm.",
+    "essay_he": "היקום הפיזי. המחבר מתאר את העולם הגשמי כאנרגיה רוחנית דחוסה ביותר או אור אלוהי מצומצם, שבו חוקי הטבע משקפים את המשוואות היסודיות של הממד הרוחני."
+  },
+  {
+    "id": "trust",
+    "term": "Trust",
+    "term_he": "ביטחון",
+    "search_keys": ["trust", "bitachon", "certainty"],
+    "search_keys_he": ["ביטחון", "ביטחון בה'", "וודאות"],
+    "essay": "Bitachon (certainty that God runs the world). The author explains that trust in the Creator allows a person to face life's uncertainties with peace of mind, freeing them from dependency on anonymous social groups.",
+    "essay_he": "ביטחון (הוודאות שהבורא מנהיג את העולם). המחבר מסביר כי הביטחון בבורא מאפשר לאדם לעמוד מול חוסר הוודאות של החיים בשלוות נפש, ומשחרר אותו מתלות בקבוצות חברתיות אנונימיות."
+  },
+  {
+    "id": "mirror-soul",
+    "term": "Mirror of the Soul",
+    "term_he": "מראה של הנשמה",
+    "search_keys": ["mirror of the soul", "meticulously calibrated mirror"],
+    "search_keys_he": ["מראה של הנשמה", "מראה המציאות"],
+    "essay": "The environment as a reflection. The author writes that the world is a meticulously calibrated mirror; your friends, family, and enemies are externalized fragments reflecting your own internal landscape.",
+    "essay_he": "הסביבה כהשתקפות פנימית. המחבר כותב כי העולם הוא מראה מכוילת בדיוק רב; החברים, בני המשפחה והאויבים של האדם הם פשוט חלקים חיצוניים המשתקפים מתוך הנוף הפנימי שלו."
+  },
+  {
+    "id": "enemies",
+    "term": "Enemies",
+    "term_he": "אויבים",
+    "search_keys": ["enemy", "enemies", "unintegrated personality"],
+    "search_keys_he": ["אויב", "אויבים", "יריב"],
+    "essay": "Externalized mirror fragments of one's own unintegrated personality. The author explains that enemies are not random, but serve to teach us essential lessons, reflecting parts of ourselves we refuse to integrate.",
+    "essay_he": "חלקי אישיות לא משולבים של האדם המשתקפים כלפי חוץ. המחבר מסביר כי האויבים אינם מקריים, אלא באים ללמד אותנו שיעורים חיוניים ולהציג לנו חלקים בעצמנו שסירבנו להטמיע."
+  },
+  {
+    "id": "success",
+    "term": "Success",
+    "term_he": "הצלה",
+    "search_keys": ["success", "successful", "soul root resonance"],
+    "search_keys_he": ["הצלחה", "מצליח", "תהודה של הנשמה"],
+    "essay": "Resonance with one's unique higher soul root. The author defines success not by material wealth or public approval, but by finding and fulfilling the specific plan that aligns with one's spiritual frequency.",
+    "essay_he": "תהודה עם שורש הנשמה הייחודי של האדם. המחבר מגדיר את ההצלחה לא על פי עושר חומרי או אישור חברתי, אלא על ידי מציאת והגשמת התוכנית המיוחדת המתאימה לתדר הרוחני שלו."
+  },
+  {
+    "id": "saints",
+    "term": "Saints",
+    "term_he": "צדיקים",
+    "search_keys": ["saint", "saints", "tzaddik", "tzaddikim", "saintliness"],
+    "search_keys_he": ["צדיק", "צדיקים", "נשמות נעלות"],
+    "essay": "Tzaddikim, elevated souls who act as direct channels of light. The author notes that saints possess a clean connection to the Infinite, acting as spiritual step-down transformers to distribute light and help others align.",
+    "essay_he": "צדיקים, נשמות מורמות הפועלות כצינורות ישירים לאור. המחבר מציין כי לצדיקים יש חיבור נקי אל האינסוף, והם משמשים כשנאים רוחניים המצמצמים את האור ומסייעים לאחרים להתכוונן אליו."
+  },
+  {
+    "id": "politics",
+    "term": "Politics",
+    "term_he": "פוליטיקה",
+    "search_keys": ["politics", "political", "organic tribal", "tribal identities"],
+    "search_keys_he": ["פוליטיקה", "פוליטי", "זהות שבטית"],
+    "essay": "The balance of identity and state. The author warns against the centralized global state that strips individuals of tribal identity, arguing for organic communities built on family, trust, and localized sacred law.",
+    "essay_he": "האיזון בין זהות למדינה. המחבר מזהיר מפני מדינה גלובלית ריכוזית המפשיטה את הפרט מזהותו השבטית, ומצדד בקהילות אורגניות המבוססות על משפחה, אמון וחוק קדוש מקומי."
+  },
+  {
+    "id": "teshuvah",
+    "term": "Teshuvah",
+    "term_he": "תשובה",
+    "search_keys": ["teshuvah", "return to one's own source", "repentance"],
+    "search_keys_he": ["תשובה", "שיבה למקור"],
+    "essay": "The return of the soul to its original source. The author explains that Teshuvah is not a migration into another group's territory, but a return to one's unique spiritual root and individual accountability within the covenant.",
+    "essay_he": "שיבת הנשמה אל מקורה המקורי. המחבר מסביר כי התשובה אינה הגירה לטריטוריה של קבוצה חברתית אחרת, אלא שיבה אל שורשו הרוחני הייחודי של הפרט ולקיחת אחריות אישית בתוך הברית."
+  },
+  {
+    "id": "authority",
+    "term": "Authority",
+    "term_he": "סמכות",
+    "search_keys": ["authority", "legitimate authority", "organic soul"],
+    "search_keys_he": ["סמכות", "סמכות לגיטימית", "נפש אורגנית"],
+    "essay": "The nature of power. The author states that legitimate authority always aims for the eventual independence of the subject, contrasting it with dependency-based authority which seeks perpetual control.",
+    "essay_he": "מהות הכוח. המחבר קובע כי סמכות לגיטימית שואפת תמיד לעצמאותו הסופית של הכפוף לה, בניגוד לסמכות המבוססת על תלות ומבקשת לשלוט בו לנצח."
+  },
+  {
+    "id": "usa",
+    "term": "USA",
+    "term_he": "ארה\"ב",
+    "search_keys": ["usa", "america", "american", "cities like new york"],
+    "search_keys_he": ["ארה\"ב", "אמריקה", "אמריקאי", "ניו יורק"],
+    "essay": "The rise of secular intellectuals, material obsession, and the destruction of the family structure. The author analyzes the decline of the father's role in the US and the resulting political chaos, comparing it to the fall of Rome.",
+    "essay_he": "עליית האינטלקטואלים החילוניים, רדיפת החומריות והתפוררות התא המשפחתי. המחבר מנתח את שחיקת מעמד האב בארה\"ב ואת הכאוס הפוליטי שבא בעקבותיה, ומקביל זאת לנפילת האימפריה הרומית."
+  },
+  {
+    "id": "sefirot",
+    "term": "Sefirot",
+    "term_he": "ספירות",
+    "search_keys": ["sefirot", "sephirot", "ten sefirot"],
+    "search_keys_he": ["ספירות", "ספירה", "עשר ספירות"],
+    "essay": "The ten divine channels. The author describes the sefirot as energy configurations that dictate how the infinite light is stepped down to create and govern the lower worlds, acting as the spiritual elements of reality.",
+    "essay_he": "עשרת ערוצי השפע האלוהי. המחבר מתאר את הספירות כתצורות אנרגטיות המכתיבות כיצד האור האינסופי מצטמצם כדי לברוא ולהנהיג את העולמות התחתונים, ופועלות כיסודות הרוחניים של המציאות."
+  },
+  {
+    "id": "banach-space",
+    "term": "Banach Space",
+    "term_he": "מרחב בנך",
+    "search_keys": ["banach space", "banach spaces", "complete normed"],
+    "search_keys_he": ["מרחב בנך", "מרחבי בנך", "נורמי שלם"],
+    "essay": "Complete normed vector space. The author uses Banach spaces to model complete, enclosed spiritual energy fields where actions reach a definite end state (converging Cauchy sequences), representing boundaries of choice.",
+    "essay_he": "מרחב וקטורי נורמי שלם. המחבר משתמש במרחבי בנך כדי למדל שדות ואנרגיות רוחניות שלמים וסגורים, שבהם פעולות מגיעות למצב קצה מוגדר (התכנסות סדרות קושי), ומייצגים את גבולות הבחירה."
+  },
+  {
+    "id": "hilbert-space",
+    "term": "Hilbert Space",
+    "term_he": "מרחב הילברט",
+    "search_keys": ["hilbert space", "hilbert spaces", "infinite-dimensional"],
+    "search_keys_he": ["מרחב הילברט", "מרחבי הילברט", "אינסוף ממדי"],
+    "essay": "Infinite-dimensional vector space with an inner product. The author uses Hilbert spaces to model multidimensional levels of spiritual reality, where human choices act to collapse the wave function of spiritual potential.",
+    "essay_he": "מרחב וקטורי אינסוף-ממדי בעל מכפלה פנימית. המחבר משתמש במרחבי הילברט כדי למדל רמות רב-ממדיות של מציאות רוחנית, שבהן הבחירה המוסרית של האדם קובעת ומקריסה את פונקציית הגל של הפוטנציאל הרוחני."
+  },
+  {
+    "id": "cantors-diagonal",
+    "term": "Cantor's Diagonal Argument",
+    "term_he": "האלכסון של קנטור",
+    "search_keys": ["cantor's diagonal", "cantor diagonal", "diagonal argument"],
+    "search_keys_he": ["אלכסון של קנטור", "האלכסון של קנטור", "שיטת האלכסון"],
+    "essay": "Georg Cantor's proof of uncountable infinite sets. The author employs this mathematical concept to model infinite, transcendent levels of spiritual worlds that escape finite physical bounds.",
+    "essay_he": "הוכחתו של גאורג קנטור לקבוצות אינסופיות לא-מנייות. המחבר משתמש במושג מתמטי זה כדי למדל רמות אינסופיות ועילאיות של עולמות רוחניים המתעלים מעל לכל מגבלה פיזית סופית."
+  },
+  {
+    "id": "breaking-vessels",
+    "term": "Breaking of the Vessels",
+    "term_he": "שבירת הכלים",
+    "search_keys": ["breaking of the vessels", "shattering of the vessels", "shevirat hakeilim"],
+    "search_keys_he": ["שבירת הכלים", "שבירת כלים"],
+    "essay": "The cosmic rupture in Kabbalah. The author explains that the shattering of the vessels allowed holy sparks to fall into physical matter, generating material reality and creating the necessary friction for human moral choice.",
+    "essay_he": "השבר הקוסמי בקבלת האר\"י. המחבר מסביר כי שבירת הכלים איפשרה לניצוצות קדושה ליפול אל תוך החומר הפיזי, ובכך יצרה את המציאות הגשמית ואת החיכוך המוסרי ההכרחי לבחירה החופשית."
+  },
+  {
+    "id": "tzimtzum",
+    "term": "Tzimtzum",
+    "term_he": "צמצום",
+    "search_keys": ["tzimtzum", "empty space", "chalal hapanui", "divine contraction"],
+    "search_keys_he": ["צמצום", "חלל פנוי", "הסתלקות האור"],
+    "essay": "The divine contraction. Drawing on Rabbi Nachman's Likutei Moharan, the author details how God contracted His infinite light to create an empty space for finite creation, introducing a paradox resolvable only by faith.",
+    "essay_he": "צמצום האור האלוהי. בהתבסס על ליקוטי מוהר\"ן לרבי נחמן, המחבר מפרט כיצד צמצם הבורא את אורו האינסופי כדי ליצור חלל פנוי לבריאה סופית, דבר המוליד פרדוקס רוחני הנפתר רק באמונה."
+  },
+  {
+    "id": "henkin-sentence",
+    "term": "Henkin Sentence",
+    "term_he": "משפט הנקין",
+    "search_keys": ["henkin sentence", "henkin"],
+    "search_keys_he": ["משפט הנקין"],
+    "essay": "In logic, a sentence that asserts its own validity and is valid. The author uses it as a metaphor for spiritual truths: truths that are self-validating and self-reinforcing when experienced with intellectual and spiritual integrity.",
+    "essay_he": "בלוגיקה, טענה המעידה על תקפות עצמה ובפועל היא תמיד תקפה. המחבר משתמש בה כמטאפורה לאמיתות רוחניות: אמיתות המאמתות ומחזקות את עצמן כאשר הן נחוות ביושר שכלי ורוחני."
+  },
+  {
+    "id": "higgs-field",
+    "term": "Higgs Field",
+    "term_he": "שדה היגס",
+    "search_keys": ["higgs field", "higgs boson", "higgs"],
+    "search_keys_he": ["שדה היגס", "בוזון היגס"],
+    "essay": "The mass-giving physical field. The author compares the Higgs field to Kabbalistic vessels (Keilim); both slow down, capture, and condense raw, infinite energy, translating it into stable, physical matter.",
+    "essay_he": "השדה הפיזיקלי המעניק מסה לחלקיקים. המחבר משווה את שדה היגס ל'כלים' הקבליים; שניהם מאטים, לוכדים ומעבים אנרגיה גולמית ואינסופית, ומתרגמים אותה לחומר פיזי יציב."
+  },
+  {
+    "id": "zohar",
+    "term": "Zohar",
+    "term_he": "זוהר",
+    "search_keys": ["zohar", "sefer hazohar", "book of splendor"],
+    "search_keys_he": ["זוהר", "ספר הזוהר"],
+    "essay": "The central text of Kabbalah. The author uses the Zohar to map the step-down of divine light through the worlds of Emanation, Creation, Formation, and Action, tracing the genealogy of the soul.",
+    "essay_he": "ספר היסוד של הקבלה. המחבר משתמש בזוהר כדי למפות את השתלשלות האור האלוהי דרך עולמות אצילות, בריאה, יצירה ועשייה, ובכך להתחקות אחר שורשי נשמת האדם."
+  },
+  {
+    "id": "rambam",
+    "term": "Rambam",
+    "term_he": "רמב\"ם",
+    "search_keys": ["rambam", "maimonides", "rabbi moses ben maimon"],
+    "search_keys_he": ["רמב\"ם", "משה בן מימון"],
+    "essay": "Moses Maimonides. The author utilizes the Rambam's rational legal framework as the baseline for resolving scientific progress with the immutable, eternal nature of divine law.",
+    "essay_he": "רבי משה בן מימון. המחבר משתמש במערכת הפסיקה וההלכה הרציונלית של הרמב\"ם כבסיס ליישוב בין הקידמה המדעית לבין אופיים הנצחי והבלתי משתנה של חוקי התורה."
+  },
+  {
+    "id": "tikkun",
+    "term": "Tikkun",
+    "term_he": "תיקון",
+    "search_keys": ["tikkun", "rectification", "gathering the sparks"],
+    "search_keys_he": ["תיקון", "תיקונים", "תיקון עולם"],
+    "essay": "The rectification of the shattered worlds. The author explains that Tikkun is accomplished through human choices that gather the fallen sparks of holiness, restoring them to their original divine alignment.",
+    "essay_he": "תיקון העולמות השבורים. המחבר מסביר כי התיקון מושג באמצעות בחירותיו של האדם האוספות את ניצוצות הקדושה שנפלו, ומחזירות אותן למקומן האלוהי המקורי."
+  },
+  {
+    "id": "wavelength-wisdom",
+    "term": "Wavelength of Wisdom",
+    "term_he": "אורך גל של חכמה",
+    "search_keys": ["wavelength of wisdom", "torah study resonance"],
+    "search_keys_he": ["אורך גל של חכמה", "תדר של תורה"],
+    "essay": "The cognitive frequency of learning. The author defines Torah study as a specific frequency of resonance. Engaging in Torah study tunes the human intellect to the divine wavelength, facilitating the flow of higher light.",
+    "essay_he": "תדר התהודה של הלימוד. המחבר מגדיר את לימוד התורה כתדר מיוחד של תהודה. העיסוק בתורה מכוון ומסנכרן את השכל האנושי לאורך הגל האלוהי, ובכך מאפשר זרימת אור עליון."
+  },
+  {
+    "id": "xy-coordinate",
+    "term": "X-Coordinate / Y-Coordinate",
+    "term_he": "ציר X / ציר Y",
+    "search_keys": ["x-coordinate", "y-coordinate", "vertical column of infinite light", "horizontal closeness"],
+    "search_keys_he": ["ציר X", "ציר Y", "עמוד האור", "קרבה אופקית"],
+    "essay": "The measure of the soul. The author explains that a soul's rank is not its vertical y-coordinate (starting birth rank or lineage) but its horizontal x-coordinate—its closeness to the Vertical Column of Infinite Light through choice.",
+    "essay_he": "מדד הנשמה. המחבר מסביר כי דרגתה הרוחנית של הנשמה אינה נקבעת על פי גובהה האנכי (ציר Y - ייחוס משפחתי או נקודת מוצא), אלא על פי קרבתה האופקית (ציר X) אל עמוד האור האינסופי באמצעות בחירה."
+  },
+  {
+    "id": "prophecy",
+    "term": "Prophecy",
+    "term_he": "נבואה",
+    "search_keys": ["prophecy", "prophetic", "small prophecy"],
+    "search_keys_he": ["נבואה", "נבואות", "נבואה קטנה"],
+    "essay": "The ultimate guidance. The author distinguishes between grand public prophecy and the 'Small Prophecy' of the inner heart, which acts as the ultimate guide for personal accountability and individual connection.",
+    "essay_he": "ההכוונה העליונה. המחבר מבחין בין נבואה ציבורית גדולה לבין 'הנבואה הקטנה' של הלב הפנימי, המשמשת כמורה הדרך האולטימטיבי לאחריות אישית ולחיבור פרטי של הפרט."
+  },
+  {
+    "id": "bible",
+    "term": "Bible",
+    "term_he": "מקרא",
+    "search_keys": ["bible", "biblical", "biblical values", "torah"],
+    "search_keys_he": ["מקרא", "תורה", "חוקי התורה", "ערכים מקראיים"],
+    "essay": "The blueprint of creation and law. The author analyzes biblical values as invariant codes of energy and human relations, arguing that society's salvation lies in returning to localized sacred biblical law.",
+    "essay_he": "תוכנית הבריאה והחוק. המחבר מנתח את ערכי המקרא כקודים קבועים של אנרגיה ויחסים אנושיים, וטוען כי ישועת החברה טמונה בשיבה לחוק המקראי המקודש המקומי."
+  },
+  {
+    "id": "christianity",
+    "term": "Christianity",
+    "term_he": "נצרות",
+    "search_keys": ["christianity", "christian", "christians", "jesus", "messiah son of joseph"],
+    "search_keys_he": ["נצרות", "נוצרי", "נוצרים", "ישו", "משיח בן יוסף"],
+    "essay": "The metaphysics of the stranger. In Part VI, the author analyzes the historical and metaphysical shifts of Christianity, particularly its deviations from immutable legal boundaries, and discusses Jesus' role as Messiah son of Joseph.",
+    "essay_he": "המטאפיזיקה של הזר. בחלק ו', המחבר מנתח את התמורות ההיסטוריות והמטאפיזיות של הנצרות, במיוחד סטיותיה מגבולות ההלכה הנצחית, ודן בתפקידו של ישו כמשיח בן יוסף."
+  }
+]

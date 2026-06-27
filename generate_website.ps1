@@ -40,6 +40,7 @@ $L = @{
         'Search'           = 'Search'
         'Bibliography'     = 'Bibliography'
         'Glossary'         = 'Glossary'
+        'TopicsIndex'      = 'Index of Topics'
         'Appendices'       = 'Appendices'
         'CloseNavigation'  = 'Close Navigation'
         'ToggleDarkMode'   = 'Toggle Dark Mode'
@@ -76,6 +77,7 @@ $L = @{
         'Search'           = 'חיפוש'
         'Bibliography'     = 'ביבליוגרפיה'
         'Glossary'         = 'מילון מונחים'
+        'TopicsIndex'      = 'אינדקס נושאים'
         'Appendices'       = 'נספחים'
         'CloseNavigation'  = 'סגור תפריט'
         'ToggleDarkMode'   = 'מצב לילה'
@@ -1029,6 +1031,7 @@ $fullContents
                     <ul class="section-list">
                         <li><a href="glossary.html"><span class="sec-title">$($Loc['Glossary'])</span></a></li>
                         <li><a href="bibliography.html"><span class="sec-title">$($Loc['Bibliography'])</span></a></li>
+                        <li><a href="topics.html"><span class="sec-title">$($Loc['TopicsIndex'])</span></a></li>
                     </ul>
                 </div>
             </div>
